@@ -7,7 +7,7 @@ $(document).on('click', '.adminRole', function(e){
     var id=$(this).attr('rel');
      $.ajax({
      method:"GET",
-     url: "scripts/backend-script.php",
+     url: "backend-script.php",
      data:{tableName:name,id:id,role:'admin'},
  
      success: function(data){
@@ -137,9 +137,12 @@ var view=getUrlParameter('view');
 var edit=getUrlParameter('edit');
 
 if(cat!='' && subcat!=''){
+   alert('hola' + cat + '   ' + subcat);
+   if (cat=='pto_acopio'){
   $.ajax({    
      type: "GET",
-     url: "scripts/dynamic-page.php", 
+     //url: "scripts/dynamic-page.php", 
+     url: "ver_puntoacopio.php",
      data:{
        cat:cat,
        subcat,
@@ -156,7 +159,11 @@ if(cat!='' && subcat!=''){
 
 
  });
+} else {
+   alert('Verificar');
+}
 }else{
+   alert('chao');
  $('#dynamic-page').html("This file does not exist"); 
 }
 

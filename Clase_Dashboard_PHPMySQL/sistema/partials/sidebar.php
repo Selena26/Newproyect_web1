@@ -52,7 +52,7 @@
                     <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                     Usuarios
                 </a>
-                <a class="nav-link" href="tabla.php">
+                <a class="nav-link" href="punto_acopio.php">
                     <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                     Puntos de Acopio
                 </a>
