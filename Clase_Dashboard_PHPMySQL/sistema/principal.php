@@ -31,8 +31,6 @@
     <?php
         include('partials/header.php');
     ?>
-    
-<div id="alertBox">mhvmbvbm</div>
         <div id="layoutSidenav">
         <?php
             include('partials/sidebar.php');

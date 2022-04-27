@@ -61,6 +61,7 @@
 									<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 										<thead>
 											<tr>
+												<th>S.N</th>
 												<th>Usuario</th>
 												<th>Password</th>
 												<th>Nombre</th>
@@ -70,6 +71,7 @@
 										</thead>
 										<tfoot>
 											<tr>
+												<th>S.N</th>
 												<th>Usuario</th>
 												<th>Password</th>
 												<th>Nombre</th>
@@ -79,29 +81,32 @@
 										</tfoot>
 										<tbody>
 											<?php
-											require_once('conexion.php'); 
+											//require_once('conexion.php'); 
 											$db= $mysqli;
-											$sql1="SELECT * FROM usuarios ORDER BY id DESC";
+											$sql1="SELECT * FROM usuarios ORDER BY id ASC";
 											$res1= $mysqli->query($sql1);
 											if($res1->num_rows>0)
 											{$i=1;
-											while($row = $resultado->fetch_assoc()) { ?>
+											while($data = $res1->fetch_assoc()) { ?>
 												
 												<tr>
-													<td><?php echo $row['usuario']; ?></td>
-													<td><?php echo $row['password']; ?></td>
-													<td><?php echo $row['nombre']; ?></td>
-													<td><?php echo $row['tipo_usuario']; ?></td>
-													<td><a href="javascript:void(0)" class="text-danger delete" name="usuarios" id="<?php echo $row['id']; ?>"><i class='far fa-trash-alt'></i></a></td>
+													<td><?php echo $i; ?></td>
+													<td><?php echo $data['usuario']; ?></td>
+													<td><?php echo $data['password']; ?></td>
+													<td><?php echo $data['nombre']; ?></td>
+													<td><?php echo $data['tipo_usuario']; ?></td>
+													<td><a href="javascript:void(0)" class="text-danger delete" name="usuarios" id="<?php echo $data['id']; ?>"><i class='far fa-trash-alt'></i></a></td>
 												</tr>
 												
-											<?php $i++;}
+											<?php 
+											$i++;}
 										 } ?>
 										</tbody>
 									</table>
 								</div>
 								</div>
 								</div>
+								
 											</div>
 					</main>
 				<?php
