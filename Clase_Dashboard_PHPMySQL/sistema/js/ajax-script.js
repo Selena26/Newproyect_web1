@@ -64,7 +64,7 @@ $(document).on('submit','#updateForm',function(e){
      $.ajax({
      method:"POST",
      url: "backend_usuarios.php?name="+name+"&id="+id,
-     data:formData,
+     row:formData,
      cache:false,
      contentType: false,
      processData: false,
@@ -75,7 +75,7 @@ $(document).on('submit','#updateForm',function(e){
     
      $('button[type="submit"]').removeAttr('disabled');
     
-      $('#alertBox').html(data).fadeIn();
+      $('#alertBox').html(row).fadeIn();
    }
         
 });
@@ -88,7 +88,7 @@ $(document).on('click','.delete',function(e){
   var el=$(this);
   var id=$(this).attr('id');
   var name = $(this).attr('name');
-  alert('HOLA' + name);
+  //alert('HOLA' + name);
   if ($('#confirmBox').css("display") == "none") {
    $('#confirmBox').fadeIn();
 
@@ -98,18 +98,18 @@ $(document).on('click','.delete',function(e){
 
          $.ajax({    
             type: "GET",
-            url: "backend_usuarios.php", 
+            url: "./backend_usuarios.php", 
             data:{deleteId:id, deleteData:name},            
             dataType: "html",                  
             success: function(data){ 
-                          
+               
                 $("#showTable").html(data); 
                 $('#alertBox').html(data).fadeIn();
                 el.parents('tr').remove();
             }
         });
       }
-
+      
      $('#confirmBox').fadeOut(); 
 
    })
