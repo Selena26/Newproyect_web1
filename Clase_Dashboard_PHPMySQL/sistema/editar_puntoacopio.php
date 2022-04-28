@@ -30,6 +30,7 @@
 		<meta name="author" content="" />
 		<title>Tables - SB Admin</title>
 		<link href="css/styles.css" rel="stylesheet" />
+        <link href="css/estilo1.css" rel="stylesheet" />
 		<link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" crossorigin="anonymous"></script>
 	</head>
@@ -55,7 +56,7 @@
 						<div class="card mb-4">
 							<div class="card-header"><i class="fas fa-table mr-1"></i>Registro</div>
 							<!--<div class="card-body">-->
-								<div class="table-responsive">
+								<div class="content-box">
                                 <?php
                                     if(!empty($_GET['edit'])){
                                         $editId= $_GET['edit'];
@@ -93,6 +94,7 @@
                                             <input type="text" class="form-control"  placeholder="Nombre representante" name="Representante" value="<?php echo $Representante; ?>">
                                         </div>
                                     </div>
+                                    </div>
                                     <div class="row">
                                         <div class="col">
                                             <div class="form-group">
@@ -118,34 +120,33 @@
                                              <div class="form-group">
                                                  <label for="longitud">Longitud</label>
                                                  <input type="text" id="longitud" class="form-control"  name="Longitud" value="<?php echo $Longitud; ?>" readonly>
-                                                </div>
                                             </div>
                                         </div>
+                                     </div>
                                         <div class="row">
                                             <div class="col">
                                                 <center>
                                                     <div id="mapa" style="width: 80%; height: 500px">
-                                                    </div> 
-                                                </center>
-                                            </div>
-                                        </div>
-                                         <!---===== Crear el mapa====-->
-                                         <script>
+                                                    <script>
                                                 function iniciarMapa(){
                                                  var Latitud;
                                                  var Longitud;
-                                                 if($("#latitud").val()=="" && $("#longitud").val()=="")
-                                                 {
+
+                                                 if($("#latitud").val()=="" && $("#longitud").val()==""){
                                                     Latitud=-0.4052838;
                                                     Longitud=-79.305067;
                                                  }else{
                                                      Latitud=$("#latitud").val();
                                                      Longitud=$("#longitud").val();
-                                                 }coordenadas= {
+                                                 }
+                                                 
+                                                 coordenadas= {
                                                      lng: Longitud,
                                                      lat: Latitud
                                                  }
+
                                                  generarMapa(coordenadas);
+
                                                 }
                                                 function generarMapa(coordenadas){
                                                     var mapa=new google.maps.Map(document.getElementById('mapa'),
@@ -153,6 +154,7 @@
                                                         zoom: 12,
                                                         center: new google.maps.LatLng(coordenadas.lat, coordenadas.lng) 
                                                     });
+                                                    
                                                     marcador=new google.maps.Marker(
                                                         {
                                                          map: mapa,
@@ -166,6 +168,12 @@
                                                 }
                                             </script>
                                             <script src="https://maps.googleapis.com/maps/api/js?key=&callback=iniciarMapa"></script>
+                                                </div> 
+                                                </center>
+                                            </div>
+                                        </div>
+                                         <!---===== Crear el mapa====-->
+                                         
                                             <div class="row">
                                                 <!---===== form start====-->
                                                 <div class="form-group">
@@ -173,7 +181,6 @@
                                                 </div>
                                                 <!---====== form end==========-->
                                             </div>
-                                        </div>
                                     </form>
 								</div>
 							<!---</div>-->
