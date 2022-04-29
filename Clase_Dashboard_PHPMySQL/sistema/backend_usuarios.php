@@ -69,6 +69,27 @@ if(!empty($_GET['id']) && !empty($_GET['name']) && $_GET['name']=='usuarios'){
 
 }
 
+function insert_data(array $data, string $tableName){
+       
+  global $db;
+
+  $tableColumns = $userValues = ''; 
+  $num = 0; 
+  foreach($data as $column=>$value){ 
+       $comma = ($num > 0)?', ':''; 
+       $tableColumns .= $comma.$column; 
+       $userValues  .= $comma."'".$value."'"; 
+       $num++; 
+   } 
+ $insertQuery="INSERT INTO ".$tableName."  (".$tableColumns.") VALUES (".$userValues.")";
+ $insertResult=$db->query($insertQuery);
+ if($insertResult){
+    return true;
+ }else{
+    return "Error: " . $insertQuery . "<br>" . $db->error;
+ }
+
+}
 
 // ======= delete data from database ============//
 if(!empty($_GET['deleteId']) && !empty($_GET['deleteData']))

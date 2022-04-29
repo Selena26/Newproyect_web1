@@ -56,6 +56,9 @@
 						</div>
 						<div class="card mb-4">
 							<div class="card-header"><i class="fas fa-table mr-1"></i>DataTable Example</div>
+							<div class="col text-right">
+                                <a href="editar_usuario.php?" class="btn btn-secondary content-link1">Añadir Nuevo </a>
+                            </div>
 							<div class="card-body">
 								<div class="table-responsive">
 									<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -100,7 +103,7 @@
 													<td><?php echo $data['nombre']; ?></td>
 													<td><?php echo $data['tipo_usuario']; ?></td>
 													<td><a href="ver_usuarios.php?view=<?php echo $data['id']; ?>" class="text-secondary content-link1"><i class='far fa-eye'></i></a></td>
-                                                    <td><a href="editar_puntoacopio.php?edit=<?php echo $data['id']; ?>" class="text-success content-link"><i onclick="cargar()" class=' far fa-edit'></i></a></td>
+                                                    <td><a href="editar_usuario.php?edit=<?php echo $data['id']; ?>" class="text-success content-link"><i onclick="cargar()" class=' far fa-edit'></i></a></td>
 													<td><a href="javascript:void(0)" class="text-danger delete" name="usuarios" id="<?php echo $data['id']; ?>"><i class='far fa-trash-alt'></i></a></td>
 												</tr>
 												

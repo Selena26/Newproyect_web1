@@ -7,7 +7,7 @@ $(document).on('click', '.adminRole', function(e){
     var id=$(this).attr('rel');
      $.ajax({
      method:"GET",
-     url: "backend-script.php",
+     url: "./backend_usuarios.php",
      data:{tableName:name,id:id,role:'admin'},
  
      success: function(data){
@@ -35,7 +35,7 @@ $(document).on('submit','#adminForm',function(e){
     var name=$(this).attr('name');
      $.ajax({
      method:"POST",
-     url: "backend_usuarios.php?name="+name,
+     url: "./backend_usuarios.php?name="+name,
      data:$(this).serialize(),
       beforeSend:function(){
       $('button[type="submit"]').attr('disabled','disabled').text('Saving..');
@@ -63,7 +63,7 @@ $(document).on('submit','#updateForm',function(e){
     var id= $(this).attr('rel');
      $.ajax({
      method:"POST",
-     url: "backend_usuarios.php?name="+name+"&id="+id,
+     url: "./backend_usuarios.php?name="+name+"&id="+id,
      row:formData,
      cache:false,
      contentType: false,
@@ -142,7 +142,7 @@ if(cat!='' && subcat!=''){
   $.ajax({    
      type: "GET",
      //url: "scripts/dynamic-page.php", 
-     url: "ver_puntoacopio.php",
+     url: "ver_usuarios.php",
      data:{
        cat:cat,
        subcat,

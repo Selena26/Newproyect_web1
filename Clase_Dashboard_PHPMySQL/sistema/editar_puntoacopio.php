@@ -127,7 +127,13 @@
                                             <div class="col">
                                                 <center>
                                                     <div id="mapa" style="width: 80%; height: 500px">
-                                                    <script>
+                                                    
+                                                </div> 
+                                                </center>
+                                            </div>
+                                        </div>
+                                         <!---===== Crear el mapa====-->
+                                         <script>
                                                 function iniciarMapa(){
                                                  var Latitud;
                                                  var Longitud;
@@ -168,12 +174,6 @@
                                                 }
                                             </script>
                                             <script src="https://maps.googleapis.com/maps/api/js?key=&callback=iniciarMapa"></script>
-                                                </div> 
-                                                </center>
-                                            </div>
-                                        </div>
-                                         <!---===== Crear el mapa====-->
-                                         
                                             <div class="row">
                                                 <!---===== form start====-->
                                                 <div class="form-group">
