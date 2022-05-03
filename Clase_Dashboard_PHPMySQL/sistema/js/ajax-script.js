@@ -35,7 +35,7 @@ $(document).on('submit','#adminForm',function(e){
     var name=$(this).attr('name');
      $.ajax({
      method:"POST",
-     url: "./backend_usuarios.php?name="+name,
+     url: "backend_usuarios.php?name="+name,
      data:$(this).serialize(),
       beforeSend:function(){
       $('button[type="submit"]').attr('disabled','disabled').text('Saving..');
@@ -63,7 +63,7 @@ $(document).on('submit','#updateForm',function(e){
     var id= $(this).attr('rel');
      $.ajax({
      method:"POST",
-     url: "./backend_usuarios.php?name="+name+"&id="+id,
+     url: "backend_usuarios.php?name="+name+"&id="+id,
      row:formData,
      cache:false,
      contentType: false,
@@ -137,7 +137,7 @@ var view=getUrlParameter('view');
 var edit=getUrlParameter('edit');
 
 if(cat!='' && subcat!=''){
-   alert('hola' + cat + '   ' + subcat);
+   //alert('hola' + cat + '   ' + subcat);
    if (cat=='pto_acopio'){
   $.ajax({    
      type: "GET",
@@ -160,7 +160,7 @@ if(cat!='' && subcat!=''){
 
  });
 } else {
-   alert('Verificar');
+  // alert('Verificar');
 }
 }else{
    alert('chao');
