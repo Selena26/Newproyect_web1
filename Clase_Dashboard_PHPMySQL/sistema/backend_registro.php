@@ -1,7 +1,7 @@
 <?php
 require_once('conexion.php'); 
 $db= $mysql;
-<?php
+
 if(empty($_GET['id']) && !empty($_GET['name']) && $_GET['name']=='cont_registro'){
   extract($_POST);
  if(!empty($usuario)){

@@ -76,7 +76,7 @@
                                         $editId='';
                                         $idAttr="adminForm";
                                     }?>
-                                    <form id="<?php echo $idAttr; ?>" rel="<?php echo $editId; ?>" name="punto_acopio">
+                                    <form id="<?php echo $idAttr; ?>" rel="<?php echo $editId; ?>" name="usuarios">
                                     <div class="row">
                                         <div class="col">
                                             <div class="form-group">	

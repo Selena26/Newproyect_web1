@@ -35,7 +35,7 @@ $(document).on('submit','#adminForm',function(e){
     var name=$(this).attr('name');
      $.ajax({
      method:"POST",
-     url: "backend_usuarios.php?name="+name,
+     url: "./backend_usuarios.php?name="+name,
      data:$(this).serialize(),
       beforeSend:function(){
       $('button[type="submit"]').attr('disabled','disabled').text('Saving..');
@@ -61,9 +61,10 @@ $(document).on('submit','#updateForm',function(e){
     var formData = new FormData(this);
     var name=$(this).attr('name');
     var id= $(this).attr('rel');
+    
      $.ajax({
      method:"POST",
-     url: "backend_usuarios.php?name="+name+"&id="+id,
+     url: "./backend_usuarios.php?name="+name+"&id="+id,
      row:formData,
      cache:false,
      contentType: false,
@@ -75,7 +76,7 @@ $(document).on('submit','#updateForm',function(e){
     
      $('button[type="submit"]').removeAttr('disabled');
     
-      $('#alertBox').html(row).fadeIn();
+      $('#alertBox').html(data).fadeIn();
    }
         
 });
@@ -163,7 +164,7 @@ if(cat!='' && subcat!=''){
   // alert('Verificar');
 }
 }else{
-   alert('chao');
+   //alert('chao');
  $('#dynamic-page').html("This file does not exist"); 
 }
 
