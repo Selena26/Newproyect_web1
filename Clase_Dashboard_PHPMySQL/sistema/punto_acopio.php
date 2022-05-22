@@ -46,10 +46,10 @@
 			<div id="layoutSidenav_content">
 				<main>
 					<div class="container-fluid">
-						<h1 class="mt-4">Registro de Botellas</h1>
+						<h1 class="mt-4">Puntos de Acopio</h1>
 						<ol class="breadcrumb mb-4">
 							<li class="breadcrumb-item"><a href="principal.php">Dashboard</a></li>
-							<li class="breadcrumb-item active">Registro de Botellas</li>
+							<li class="breadcrumb-item active">Puntos de Acopio</li>
 						</ol>
 						<div class="card mb-4">
 							<div class="card-body">Información XXXXXXXXXXXX <a target="_blank" href="https://datatables.net/">official DataTables documentation</a>.</div>
@@ -126,7 +126,5 @@
                 <?php
                 include('partials/footer.php');
                 ?>
-			</div>
-		</div>
 	</body>
 </html>
