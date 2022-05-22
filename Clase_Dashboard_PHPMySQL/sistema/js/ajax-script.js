@@ -65,7 +65,7 @@ $(document).on('submit','#updateForm',function(e){
      $.ajax({
      method:"POST",
      url: "backend_usuarios.php?name="+name+"&id="+id,
-     row:formData,
+     data:formData,
      cache:false,
      contentType: false,
      processData: false,
