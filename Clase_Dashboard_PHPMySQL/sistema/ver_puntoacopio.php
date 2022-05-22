@@ -83,13 +83,13 @@
                                         <th>Número Celular -</th><td><?php echo $Contacto_telefono; ?></td>
                                     </tr>
                                     <tr>
-                                        <th>Latitud -</th><td><?php echo $Latitud; ?></td>
+                                        <th>Latitud -</th><td id="latitud"><?php echo $Latitud; ?></td>
                                     </tr>
                                     <tr>
-                                        <th>Longitud -</th><td><?php echo $Longitud; ?></td>
+                                        <th>Longitud -</th><td id="latitud"><?php echo $Longitud; ?></td>
                                     </tr>
-									</table>
-                                    <?php}?>
+									</table>     
+									
 								</div>
 							</div>
 						</div>

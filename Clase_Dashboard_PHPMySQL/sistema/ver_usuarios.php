@@ -81,7 +81,6 @@
                                         <th>Tipo de usuario -</th><td><?php echo $tipo_usuario; ?></td>
                                     </tr>
 									</table>
-                                    <?php}?>
 								</div>
 							</div>
 						</div>

@@ -64,14 +64,14 @@ $(document).on('submit','#updateForm',function(e){
     
      $.ajax({
      method:"POST",
-     url: "./backend_usuarios.php?name="+name+"&id="+id,
+     url: "backend_usuarios.php?name="+name+"&id="+id,
      row:formData,
      cache:false,
      contentType: false,
      processData: false,
       beforeSend:function(){
       $('button[type="submit"]').attr('disabled','disabled');
-    },
+    }, 
      success: function(data){
     
      $('button[type="submit"]').removeAttr('disabled');
@@ -139,7 +139,7 @@ var edit=getUrlParameter('edit');
 
 if(cat!='' && subcat!=''){
    //alert('hola' + cat + '   ' + subcat);
-   if (cat=='pto_acopio'){
+   if (cat=='nombre'){
   $.ajax({    
      type: "GET",
      //url: "scripts/dynamic-page.php", 
@@ -152,7 +152,7 @@ if(cat!='' && subcat!=''){
      dataType: "html",                  
      success: function(data){ 
                    
-        $('#dynamic-page').html(data); 
+        $('#editar_usuarios').html(data); 
          
          
              
@@ -165,7 +165,7 @@ if(cat!='' && subcat!=''){
 }
 }else{
    //alert('chao');
- $('#dynamic-page').html("This file does not exist"); 
+ $('#editar_usuarios').html("This file does not exist"); 
 }
 
 });

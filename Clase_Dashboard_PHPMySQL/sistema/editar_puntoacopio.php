@@ -19,6 +19,28 @@
 	$resultado = $mysqli->query($sql);
 	
 	
+     if(!empty($_GET['edit'])){
+    $editId= $_GET['edit'];
+    $query="SELECT * FROM punto_acopio WHERE id=$editId";
+    $res= $mysqli->query($query);
+    $editData=$res->fetch_assoc();
+    $Nombre= $editData['Nombre'];
+    $Representante= $editData['Representante'];
+    $Contacto_email= $editData['Contacto_email'];
+    $Contacto_telefono= $editData['Contacto_telefono'];
+    $Latitud= $editData['Latitud'];
+    $Longitud= $editData['Longitud'];
+     $idAttr="updateForm";
+    }else{
+        $Nombre='';
+        $Representante= '';
+        $Contacto_email= '';
+        $Contacto_telefono= '';
+        $Latitud= '';
+        $Longitud= '';
+         $editId='';
+         $idAttr="adminForm";
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -57,29 +79,7 @@
 							<div class="card-header"><i class="fas fa-table mr-1"></i>Registro</div>
 							<!--<div class="card-body">-->
 								<div class="content-box">
-                                <?php
-                                    if(!empty($_GET['edit'])){
-                                        $editId= $_GET['edit'];
-                                        $query="SELECT * FROM punto_acopio WHERE id=$editId";
-                                        $res= $mysqli->query($query);
-                                        $editData=$res->fetch_assoc();
-                                        $Nombre= $editData['Nombre'];
-                                        $Representante= $editData['Representante'];
-                                        $Contacto_email= $editData['Contacto_email'];
-                                        $Contacto_telefono= $editData['Contacto_telefono'];
-                                        $Latitud= $editData['Latitud'];
-                                        $Longitud= $editData['Longitud'];
-                                        $idAttr="updateForm";
-                                    }else{
-                                        $Nombre='';
-                                        $Representante= '';
-                                        $Contacto_email= '';
-                                        $Contacto_telefono= '';
-                                        $Latitud= '';
-                                        $Longitud= '';
-                                        $editId='';
-                                        $idAttr="adminForm";
-                                    }?>
+                                <br><!--aqui iba antes lo del php-->
                                     <form id="<?php echo $idAttr; ?>" rel="<?php echo $editId; ?>" name="punto_acopio">
                                     <div class="row">
                                         <div class="col">

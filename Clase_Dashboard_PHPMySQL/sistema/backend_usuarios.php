@@ -10,8 +10,6 @@ if(empty($_GET['id']) && !empty($_GET['name']) && $_GET['name']=='usuarios'){
        'password'=>md5($password),
        'nombre'=>$nombre,
        'tipo_usuario'=>$tipo_usuario
-       
-      
      ];
   
 
@@ -46,9 +44,6 @@ if(!empty($_GET['id']) && !empty($_GET['name']) && $_GET['name']=='usuarios'){
        
        
      ];
-  
-
-  
     $tableName=$_GET['name']; 
     $id= $_GET['id'];
   
