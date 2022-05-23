@@ -55,8 +55,9 @@
                         <li class="breadcrumb-item active">Ingresar Usuario</li>
                     </ol>
                     <div class="card mb-4">
-                        <div class="card-body">Información XXXXXXXXXXXX <a target="_blank"
-                                href="https://datatables.net/">official DataTables documentation</a>.</div>
+                        <div class="card-body">En esta sección se puede editar o añadir un nuevo registro.
+								Hay un formulario con contenido del usuario, contraseña, nombre, y tipo de usuario
+								registrado.</div>
                     </div>
                     <div class="card mb-4">
                         <div class="card-header"><i class="fas fa-table mr-1"></i>Registro</div>
@@ -122,6 +123,10 @@
                                     <div class="form-group">
                                         <button class="btn btn-secondary">Guardar</button>
                                     </div>
+                                    <div class="col text-right">
+                                        <a href="usuarios.php?" class="btn btn-secondary content-link1">Atrás </a>
+                                    </div>
+
                                     <!---====== form end==========-->
                                 </div>
                             </form>

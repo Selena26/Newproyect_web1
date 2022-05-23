@@ -50,10 +50,9 @@
 							<li class="breadcrumb-item active">Ver Usuarios</li>
 						</ol>
 						<div class="card mb-4">
-							<div class="card-body">En esta sección se encuentra información referente al registro de botellas.
-								Hay una tabla con contenido del usuario, punto de acopio fecha, y control de estado de las botellas 
-								registradas. Así mismo, de forma detallada de puede visualizar el contenido a detalle, editar, 
-								añadir o eliminar un registro.</div>
+							<div class="card-body">En esta sección se encuentra información referente al usuario.
+								Hay una tabla con contenido individual del usuario, nombre, y tipo de usuario
+								registrado.</div>
 						</div>
 						<div class="card mb-4">
 							<div class="card-header"><i class="fas fa-table mr-1"></i>Registro</div>
@@ -73,9 +72,6 @@
 									<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <tr>
                                         <th>Usuario -</th><td><?php echo $usuario; ?></td>
-                                    </tr>
-                                    <tr>
-                                        <th>Contraseña-</th><td><?php echo $password; ?></td>
                                     </tr>
                                     <tr>
                                         <th>Nombre del usuario -</th><td><?php echo $nombre; ?></td>

@@ -52,7 +52,10 @@
 							<li class="breadcrumb-item active">Usuarios</li>
 						</ol>
 						<div class="card mb-4">
-							<div class="card-body">DataTables is a third party plugin that is used to generate the demo table below. For more information about DataTables, please visit the <a target="_blank" href="https://datatables.net/">official DataTables documentation</a>.</div>
+							<div class="card-body">En esta sección se encuentra información referente al usuario.
+								Hay una tabla con contenido del usuario, nombre, y tipo de usuario
+								registrado. Así mismo, de forma detallada de puede visualizar el contenido a detalle, editar, 
+								añadir o eliminar un registro.</div>
 						</div>
 						<div class="card mb-4">
 							<div class="card-header"><i class="fas fa-table mr-1"></i>DataTable Example</div>
@@ -66,7 +69,6 @@
 											<tr>
 												<th>S.N</th>
 												<th>Usuario</th>
-												<th>Password</th>
 												<th>Nombre</th>
 												<th>Tipo Usuario</th>
 												<th>Ver</th>
@@ -78,7 +80,6 @@
 											<tr>
 												<th>S.N</th>
 												<th>Usuario</th>
-												<th>Password</th>
 												<th>Nombre</th>
 												<th>Tipo Usuario</th>
 												<th>Ver</th>
@@ -99,7 +100,6 @@
 												<tr>
 													<td><?php echo $i; ?></td>
 													<td><?php echo $data['usuario']; ?></td>
-													<td><?php echo $data['password']; ?></td>
 													<td><?php echo $data['nombre']; ?></td>
 													<td><?php echo $data['tipo_usuario']; ?></td>
 													<td><a href="ver_usuarios.php?view=<?php echo $data['id']; ?>" class="text-secondary content-link1"><i class='far fa-eye'></i></a></td>
