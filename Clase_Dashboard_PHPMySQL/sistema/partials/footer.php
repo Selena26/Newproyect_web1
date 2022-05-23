@@ -23,3 +23,4 @@
 <script src="assets/demo/datatables-demo.js"></script>
 <script type="text/javascript" src="./js/ajax-script.js"></script>
 <script type="text/javascript" src="./js/script2.js"></script>
+<script type="text/javascript" src="./js/scriptbotellas.js"></script>

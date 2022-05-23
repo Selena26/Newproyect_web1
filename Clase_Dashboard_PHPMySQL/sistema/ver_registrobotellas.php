@@ -44,10 +44,10 @@
 			<div id="layoutSidenav_content">
 				<main>
 					<div class="container-fluid">
-                    <h1 class="mt-4">Usuarios</h1>
+                    <h1 class="mt-4">Registro de Botellas</h1>
 						<ol class="breadcrumb mb-4">
-							<li class="breadcrumb-item"><a href="usuarios.php">Usuarios</a></li>
-							<li class="breadcrumb-item active">Ver Usuarios</li>
+							<li class="breadcrumb-item"><a href="usuarios.php">Registro de Botellas</a></li>
+							<li class="breadcrumb-item active">Ver Registro</li>
 						</ol>
 						<div class="card mb-4">
 							<div class="card-body">Información XXXXXXXXXXXX <a target="_blank" href="https://datatables.net/">official DataTables documentation</a>.</div>
@@ -58,28 +58,25 @@
 								<div class="table-responsive">
                                 <?php 
                                 $id= $_GET['view'];
-                                $query="SELECT * FROM usuarios WHERE id=$id";
-                                $res= $mysqli->query($query);
-                                $viewData=$res->fetch_assoc();
-                                $backId=$viewData['id']-1;
-                                $usuario=$viewData['usuario'];
-                                $password=$viewData['password'];
-                                $nombre=$viewData['nombre'];
-                                $tipo_usuario=$viewData['tipo_usuario'];
+								$query="SELECT * FROM cont_registro WHERE id=$id";
+								$res= $mysqli->query($query);
+								$viewData=$res->fetch_assoc();
+								$backId=$viewData['id']-1;
+								$fecha=$viewData['fecha'];
+								$control=$viewData['control'];
+								$usuarioDB=$viewData['usuario'];
+								$pto_acopioDB=$viewData['pto_acopio'];
                                 ?>
-									<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <tr>
-                                        <th>Usuario -</th><td><?php echo $usuario; ?></td>
-                                    </tr>
-                                    <tr>
-                                        <th>Contraseña-</th><td><?php echo $password; ?></td>
-                                    </tr>
-                                    <tr>
-                                        <th>Nombre del usuario -</th><td><?php echo $nombre; ?></td>
-                                    </tr>
-                                    <tr>
-                                        <th>Tipo de usuario -</th><td><?php echo $tipo_usuario; ?></td>
-                                    </tr>
+								<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                <tr>
+								<th>Identificador de usuario: </th><td><?php echo $usuarioDB; ?></td>
+								<tr>
+        						<th>Identificador de punto de acopio: </th><td><?php echo $pto_acopioDB; ?></td>
+								<tr>
+        						<th>Fecha: </th><td><?php echo $fecha; ?></td>
+								<tr>
+								<th>Control: </th><td><?php echo $control; ?></td>
+								<tr>
 									</table>
                                     
 								</div>

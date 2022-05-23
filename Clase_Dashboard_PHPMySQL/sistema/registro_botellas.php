@@ -31,6 +31,7 @@
 		<meta name="author" content="" />
 		<title>Proyecto - New Plast</title>
 		<link href="css/styles.css" rel="stylesheet" />
+		<link href="css/estilo1.css" rel="stylesheet" />
 		<link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" crossorigin="anonymous"></script>
 	</head>
@@ -55,35 +56,71 @@
 						</div>
 						<div class="card mb-4">
 							<div class="card-header"><i class="fas fa-table mr-1"></i>Registro</div>
+							<div class="col text-right">
+                                <a href="editar_registrobotella.php?" class="btn btn-secondary content-link1">Añadir Nuevo </a>
+                            </div>
 							<div class="card-body">
 								<div class="table-responsive">
 									<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 										<thead>
 											<tr>
+												<th>S.N</th>
 												<th>Usuario</th>
 												<th>Punto Acopio</th>
 												<th>Fecha</th>
 												<th>Control</th>
+												<th>Ver</th>
+												<th>Editar</th>
+												<th>Eliminar</th>
 											</tr>
 										</thead>
 										<tfoot>
 											<tr>
+												<th>S.N</th>
 												<th>Usuario</th>
 												<th>Punto Acopio</th>
 												<th>Fecha</th>
 												<th>Control</th>
+												<th>Ver</th>
+												<th>Editar</th>
+												<th>Eliminar</th>
 											</tr>
 										</tfoot>
 										<tbody>
-											<?php while($row = $resultado->fetch_assoc()) { ?>
-												
-												<tr>
-													<td><?php echo $row['usuario']; ?></td>
-													<td><?php echo $row['pto_acopio']; ?></td>
-													<td><?php echo $row['fecha']; ?></td>
-													<td><?php echo $row['control']; ?></td>
-												</tr>
-											<?php } ?>
+										<?php
+                                        require_once('conexion.php'); 
+                                        $db= $mysqli;
+                                        $sql1="SELECT * FROM cont_registro ORDER BY id DESC";
+                                        $res1= $mysqli->query($sql1);
+                                        if($res1->num_rows>0)
+                                        {$i=1;
+                                        while($data=$res1->fetch_assoc()){
+                                            ?>
+                                        <tr>
+                                            <td><?php echo $i; ?></td>
+                                            <td><?php echo $data['usuario']; ?></td>
+                                            <td><?php echo $data['pto_acopio']; ?></td>
+                                            <td><?php echo $data['fecha']; ?></td>
+                                            <?php
+                                            if($data['control']=='Verificado'){
+                                            ?>
+                                            <td><i class="fa fa-check"></i></td>
+                                            <?php } else{ ?>
+                                            <td><i class='fa fa-ban'></i></td>
+                                            <?php } ?>
+
+											<td><a href="ver_registrobotellas.php?view=<?php echo $data['id']; ?>" class="text-secondary content-link1"><i class='far fa-eye'></i></a></td>
+                                            <td><a href="editar_registrobotella.php?edit=<?php echo $data['id']; ?>" class="text-success content-link1"><i onclick="cargar()" class=' far fa-edit'></i></a></td>
+											<td><a href="javascript:void(0)" class="text-danger delete" name="cont_registro" id="<?php echo $data['id']; ?>"><i class='far fa-trash-alt'></i></a></td>
+                                        </tr>
+                                        <?php
+                                        $i++;}
+                                        }else{
+                                        ?>
+                                        <tr>
+                                            <td colspan="6">Sin datos de registro de botellas plasticas </td>
+                                        </tr>
+                                        <?php } ?>
 										</tbody>
 									</table>
 								</div>
