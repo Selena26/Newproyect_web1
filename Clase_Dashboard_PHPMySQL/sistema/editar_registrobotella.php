@@ -58,8 +58,7 @@
                         <li class="breadcrumb-item active">Ingresar Registro de Botellas</li>
                     </ol>
                     <div class="card mb-4">
-                        <div class="card-body">Información XXXXXXXXXXXX <a target="_blank"
-                                href="https://datatables.net/">official DataTables documentation</a>.</div>
+                        <div class="card-body">En esta sección se encuentra información referente al registro de botellas, ya sea para editar o añadir un nuevo registro.</div>
                     </div>
                     <div class="card mb-4">
                         <div class="card-header"><i class="fas fa-table mr-1"></i>Registro</div>
@@ -148,7 +147,9 @@
 			</div>
 			<!---====== form end==========-->
 		</div>
-		
+        <div class="col text-right">
+            <a href="registro_botellas.php?" class="btn btn-secondary content-link1">Atrás </a>
+		</div>
 	</div>
 	</div>
 </form>

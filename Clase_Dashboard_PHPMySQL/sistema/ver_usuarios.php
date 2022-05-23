@@ -50,7 +50,10 @@
 							<li class="breadcrumb-item active">Ver Usuarios</li>
 						</ol>
 						<div class="card mb-4">
-							<div class="card-body">Información XXXXXXXXXXXX <a target="_blank" href="https://datatables.net/">official DataTables documentation</a>.</div>
+							<div class="card-body">En esta sección se encuentra información referente al registro de botellas.
+								Hay una tabla con contenido del usuario, punto de acopio fecha, y control de estado de las botellas 
+								registradas. Así mismo, de forma detallada de puede visualizar el contenido a detalle, editar, 
+								añadir o eliminar un registro.</div>
 						</div>
 						<div class="card mb-4">
 							<div class="card-header"><i class="fas fa-table mr-1"></i>Registro</div>

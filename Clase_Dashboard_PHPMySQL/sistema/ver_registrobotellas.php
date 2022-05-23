@@ -50,7 +50,8 @@
 							<li class="breadcrumb-item active">Ver Registro</li>
 						</ol>
 						<div class="card mb-4">
-							<div class="card-body">Información XXXXXXXXXXXX <a target="_blank" href="https://datatables.net/">official DataTables documentation</a>.</div>
+							<div class="card-body">En esta sección se encuentra información referente al registro de botellas, de forma detallada
+								e individual.</div>
 						</div>
 						<div class="card mb-4">
 							<div class="card-header"><i class="fas fa-table mr-1"></i>Registro</div>
@@ -81,6 +82,13 @@
                                     
 								</div>
 							</div>
+						</div>
+						<div class="card mb-4">
+							<div class="col text-right">
+								<center>
+								<a href="registro_botellas.php?" class="btn btn-secondary content-link1">Atrás </a>
+								</center>
+						    </div>
 						</div>
 					</div>
 				</main>
