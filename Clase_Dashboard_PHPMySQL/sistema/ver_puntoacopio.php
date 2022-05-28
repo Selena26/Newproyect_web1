@@ -93,11 +93,13 @@
 								</div>
 							</div>
 						</div>
+						
 						<div class="col text-right">
 								<center>
 								<a href="registro_botellas.php?" class="btn btn-secondary content-link1">Atrás </a>
 								</center>
 						    </div>
+
 					</div>
 				</main>
                 <?php
