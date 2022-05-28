@@ -83,13 +83,24 @@
                                         <th>Número Celular -</th><td><?php echo $Contacto_telefono; ?></td>
                                     </tr>
                                     <tr>
-                                        <th>Latitud -</th><td id="latitud"><?php echo $Latitud; ?></td>
+                                        <th for="latitud">Latitud -</th>
+										<td><input type="text" id="latitud" class="form-control" name="Latitud"
+                                                value="<?php echo $Latitud; ?>" readonly></td>
                                     </tr>
                                     <tr>
-                                        <th>Longitud -</th><td id="latitud"><?php echo $Longitud; ?></td>
+                                        <th for="longitud">Longitud -</th>
+										<td><input type="text" id="longitud" class="form-control" name="Longitud"
+                                                value="<?php echo $Longitud; ?>" readonly></td>
                                     </tr>
 									</table>     
-									
+									<div class="row">
+                                    <div class="col">
+                                        <center>
+                                            <div id="mapa" style="width: 80%; height: 500px">
+                                            </div>
+                                        </center>
+                                    </div>
+                                </div>
 								</div>
 							</div>
 						</div>
@@ -102,3 +113,40 @@
 		</div>
 	</body>
 </html>
+<!---===== Crear el mapa====-->
+<script>
+function iniciarMapa() {
+    var Latitud;
+    var Longitud;
+
+    if ($("#latitud").val() == "" && $("#longitud").val() == "") {
+        Latitud = -0.4052838;
+        Longitud = -79.305067;
+    } else {
+        Latitud = $("#latitud").val();
+        Longitud = $("#longitud").val();
+    }
+
+    coordenadas = {
+        lng: Longitud,
+        lat: Latitud
+    }
+
+    generarMapa(coordenadas);
+
+}
+
+function generarMapa(coordenadas) {
+    var mapa = new google.maps.Map(document.getElementById('mapa'), {
+        zoom: 12,
+        center: new google.maps.LatLng(coordenadas.lat, coordenadas.lng)
+    });
+
+    marcador = new google.maps.Marker({
+        map: mapa,
+        draggable: true,
+        position: new google.maps.LatLng(coordenadas.lat, coordenadas.lng)
+    });
+}
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=&callback=iniciarMapa"></script>
