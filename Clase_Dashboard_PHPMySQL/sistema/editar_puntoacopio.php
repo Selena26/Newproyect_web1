@@ -151,6 +151,7 @@
                                     <div class="form-group">
                                         <button class="btn btn-secondary">Guardar</button>
                                     </div>
+                                    
                                     <div class="col text-right">
                                         <a href="punto_acopio.php?" class="btn btn-secondary content-link1">Atrás </a>
                                     </div>
