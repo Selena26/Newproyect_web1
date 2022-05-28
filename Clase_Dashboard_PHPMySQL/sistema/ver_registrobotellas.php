@@ -83,13 +83,11 @@
 								</div>
 							</div>
 						</div>
-						<div class="card mb-4">
 							<div class="col text-right">
 								<center>
 								<a href="registro_botellas.php?" class="btn btn-secondary content-link1">Atrás </a>
 								</center>
 						    </div>
-						</div>
 					</div>
 				</main>
                 <?php

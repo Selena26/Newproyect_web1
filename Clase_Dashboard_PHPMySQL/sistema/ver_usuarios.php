@@ -84,6 +84,11 @@
 							</div>
 						</div>
 					</div>
+					<div class="col text-right">
+							<center>
+								<a href="usuarios.php?" class="btn btn-secondary content-link1">Atrás </a>
+							</center>
+						</div>
 				</main>
                 <?php
                 include('partials/footer.php');

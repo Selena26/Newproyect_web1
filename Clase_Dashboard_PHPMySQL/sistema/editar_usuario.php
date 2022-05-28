@@ -126,7 +126,6 @@
                                     <div class="col text-right">
                                         <a href="usuarios.php?" class="btn btn-secondary content-link1">Atrás </a>
                                     </div>
-
                                     <!---====== form end==========-->
                                 </div>
                             </form>

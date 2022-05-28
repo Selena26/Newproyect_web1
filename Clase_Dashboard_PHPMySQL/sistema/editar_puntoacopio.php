@@ -77,8 +77,11 @@
                         <li class="breadcrumb-item active">Ver Puntos de Acopio</li>
                     </ol>
                     <div class="card mb-4">
-                        <div class="card-body">Información XXXXXXXXXXXX <a target="_blank"
-                                href="https://datatables.net/">official DataTables documentation</a>.</div>
+                        <div class="card-body">
+                        En esta sección se encuentra el apartado para añadir o editar un registro referente a los puntos de acopio.
+						Hay un fomulario con contenido del nombre del punto de acopio, nombre del representante, email, telefono, latitud y longitud del lugar
+						que se desee registrar.
+                        </div>
                     </div>
                     <div class="card mb-4">
                         <div class="card-header"><i class="fas fa-table mr-1"></i>Registro</div>
@@ -147,6 +150,10 @@
                                     <!---===== form start====-->
                                     <div class="form-group">
                                         <button class="btn btn-secondary">Guardar</button>
+                                    </div>
+                                    
+                                    <div class="col text-right">
+                                        <a href="punto_acopio.php?" class="btn btn-secondary content-link1">Atrás </a>
                                     </div>
                                     <!---====== form end==========-->
                                 </div>

@@ -52,7 +52,12 @@
 							<li class="breadcrumb-item active">Puntos de Acopio</li>
 						</ol>
 						<div class="card mb-4">
-							<div class="card-body">Información XXXXXXXXXXXX <a target="_blank" href="https://datatables.net/">official DataTables documentation</a>.</div>
+							<div class="card-body">
+							En esta sección se encuentra información referente a los puntos de acopio.
+							Hay una tabla con contenido del nombre del punto de acopio, nombre del representante, email, telefono, latitud y longitud del lugar
+							registrado. Así mismo, de forma detallada de puede visualizar el contenido a detalle, editar, 
+							añadir o eliminar un registro.
+							</div>
 						</div>
 						<div class="card mb-4">
 							<div class="card-header"><i class="fas fa-table mr-1"></i>Registro</div>
