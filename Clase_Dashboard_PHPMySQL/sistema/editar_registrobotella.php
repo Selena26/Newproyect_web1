@@ -19,7 +19,7 @@
 	$resultado = $mysqli->query($sql);
 
     $query1=mysqli_query($mysqli,'SELECT id, Nombre FROM punto_acopio');
-    $query3=mysqli_query($mysqli,'SELECT id, full_name FROM admin_profile');
+    $query3=mysqli_query($mysqli,'SELECT id, nombre FROM usuarios WHERE id <> 1');
     $query2=mysqli_query($mysqli,'SELECT Nombre FROM punto_acopio p JOIN cont_registro c ON p.id = c.id');
 	
 ?>
@@ -95,9 +95,9 @@
 				<?php
 				while($usuarioDB= mysqli_fetch_array($query3)){
 					if ($usuario == $usuarioDB['id']) {
-						echo "<option value=" . $usuarioDB['id'] . " selected=selected>" . $usuarioDB['full_name'] . "</option>";
+						echo "<option value=" . $usuarioDB['id'] . " selected=selected>" . $usuarioDB['nombre'] . "</option>";
 					} else{
-						echo "<option value=" . $usuarioDB['id'] . ">" . $usuarioDB['full_name'] . "</option>";
+						echo "<option value=" . $usuarioDB['id'] . ">" . $usuarioDB['nombre'] . "</option>";
 					}
 				}
 				?>

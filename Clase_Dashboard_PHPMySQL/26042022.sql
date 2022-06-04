@@ -164,7 +164,7 @@ CREATE TABLE IF NOT EXISTS `cont_registro` (
   PRIMARY KEY (`id`),
   KEY `FK_cont_registro_admin_profile` (`usuario`),
   KEY `FK_cont_registro_puntoacopio` (`pto_acopio`),
-  CONSTRAINT `FK_cont_registro_admin_profile` FOREIGN KEY (`usuario`) REFERENCES `admin_profile` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `FK_cont_registro_usuario` FOREIGN KEY (`usuario`) REFERENCES `usuarios` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `FK_cont_registro_puntoacopio` FOREIGN KEY (`pto_acopio`) REFERENCES `punto_acopio` (`Id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4;
 
@@ -172,10 +172,10 @@ CREATE TABLE IF NOT EXISTS `cont_registro` (
 DELETE FROM `cont_registro`;
 /*!40000 ALTER TABLE `cont_registro` DISABLE KEYS */;
 INSERT INTO `cont_registro` (`id`, `usuario`, `pto_acopio`, `fecha`, `control`) VALUES
-	(8, 12, 10, '2022-04-01', 'Verificado'),
-	(9, 10, 11, '2022-04-08', 'Verificado'),
-	(11, 14, 9, '2022-04-21', 'Verificado'),
-	(12, 14, 11, '2022-03-11', 'Verificado');
+	(8, 2, 10, '2022-04-01', 'Verificado'),
+	(9, 2, 11, '2022-04-08', 'Verificado'),
+	(11, 2, 9, '2022-04-21', 'Verificado'),
+	(12, 2, 11, '2022-03-11', 'Verificado');
 /*!40000 ALTER TABLE `cont_registro` ENABLE KEYS */;
 
 -- Volcando estructura para tabla newplast_web.home_content

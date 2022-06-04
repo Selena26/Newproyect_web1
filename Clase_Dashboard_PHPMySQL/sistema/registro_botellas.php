@@ -93,7 +93,7 @@
 										<?php
                                         require_once('conexion.php'); 
                                         $db= $mysqli;
-                                        $sql1="SELECT * FROM cont_registro ORDER BY id DESC";
+                                        $sql1="SELECT * FROM cont_registro ORDER BY fecha DESC";
                                         $res1= $mysqli->query($sql1);
                                         if($res1->num_rows>0)
                                         {$i=1;
@@ -101,8 +101,20 @@
                                             ?>
                                         <tr>
                                             <td><?php echo $i; ?></td>
-                                            <td><?php echo $data['usuario']; ?></td>
-                                            <td><?php echo $data['pto_acopio']; ?></td>
+                                            <td><?php 
+												$sql2="SELECT id, nombre FROM usuarios WHERE id=" . $data['usuario'];
+												$res2= $mysqli->query($sql2);
+												$viewData=$res2->fetch_assoc();
+												echo $viewData['nombre'];
+												?>
+											</td>
+                                            <td><?php
+												$sql2="SELECT id, nombre FROM punto_acopio WHERE id=" . $data['pto_acopio'];
+												$res2= $mysqli->query($sql2);
+												$viewData=$res2->fetch_assoc();
+												echo $viewData['nombre'];
+											?>
+											</td>
                                             <td><?php echo $data['fecha']; ?></td>
                                             <?php
                                             if($data['control']=='Verificado'){
