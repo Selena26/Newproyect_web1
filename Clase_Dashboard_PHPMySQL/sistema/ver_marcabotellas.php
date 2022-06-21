@@ -46,7 +46,7 @@
 					<div class="container-fluid">
                     <h1 class="mt-4">Registro de Botellas</h1>
 						<ol class="breadcrumb mb-4">
-							<li class="breadcrumb-item"><a href="registro_botellas.php">Registro de Botellas</a></li>
+							<li class="breadcrumb-item"><a href="marca_botellas.php">Registro de marca de botellas</a></li>
 							<li class="breadcrumb-item active">Ver Registro</li>
 						</ol>
 						<div class="card mb-4">
@@ -59,24 +59,24 @@
 								<div class="table-responsive">
                                 <?php 
                                 $id= $_GET['view'];
-								$query="SELECT * FROM cont_registro WHERE id=$id";
+								$query="SELECT * FROM marca_botellas WHERE id=$id";
 								$res= $mysqli->query($query);
 								$viewData=$res->fetch_assoc();
 								$backId=$viewData['id']-1;
-								$fecha=$viewData['fecha'];
-								$control=$viewData['control'];
-								$usuarioDB=$viewData['usuario'];
-								$pto_acopioDB=$viewData['pto_acopio'];
+								$nombre_marca=$viewData['nombre_marca'];
+								$representacion_fisica=$viewData['representacion_fisica'];
+								$foto=$viewData['foto'];
+								$puntos_promocion=$viewData['puntos_promocion'];
                                 ?>
 								<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                 <tr>
-								<th>Identificador de usuario: </th><td><?php echo $usuarioDB; ?></td>
+								<th>Nombre de la marca: </th><td><?php echo $nombre_marca; ?></td>
 								<tr>
-        						<th>Identificador de punto de acopio: </th><td><?php echo $pto_acopioDB; ?></td>
+        						<th>Representación física (cm3): </th><td><?php echo $representacion_fisica; ?></td>
 								<tr>
-        						<th>Fecha: </th><td><?php echo $fecha; ?></td>
+        						<th>Foto: </th><td><?php echo $foto; ?></td>
 								<tr>
-								<th>Control: </th><td><?php echo $control; ?></td>
+								<th>Puntos de promoción: </th><td><?php echo $puntos_promocion; ?></td>
 								<tr>
 									</table>
                                     

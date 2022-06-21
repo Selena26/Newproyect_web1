@@ -60,6 +60,10 @@
                     <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                     Registro de Botellas
                 </a>
+                <a class="nav-link" href="marca_botellas.php">
+                    <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                    Registro marca de botellas
+                </a>
                 </div>
         </div>
         <div class="sb-sidenav-footer">
