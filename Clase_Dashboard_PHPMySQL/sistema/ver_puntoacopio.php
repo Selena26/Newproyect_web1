@@ -107,7 +107,7 @@
 						
 						<div class="col text-right">
 								<center>
-								<a href="registro_botellas.php?" class="btn btn-secondary content-link1">Atrás </a>
+								<a href="punto_acopio.php?" class="btn btn-secondary content-link1">Atrás </a>
 								</center>
 						    </div>
 
