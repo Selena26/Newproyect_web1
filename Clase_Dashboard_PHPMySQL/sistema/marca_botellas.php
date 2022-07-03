@@ -60,7 +60,7 @@
 						<div class="card mb-4">
 							<div class="card-header"><i class="fas fa-table mr-1"></i>DataTable Example</div>
 							<div class="col text-right">
-                                <a href="editar_marcabotellas.php?" class="btn btn-secondary content-link1">Añadir Nuevo </a>
+                                <a href="insertar_marcabotellas.php?" class="btn btn-secondary content-link1">Añadir Nuevo </a>
                             </div>
 							<div class="card-body">
 								<div class="table-responsive">

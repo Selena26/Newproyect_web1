@@ -74,7 +74,7 @@
 								<tr>
         						<th>Representación física (cm3): </th><td><?php echo $representacion_fisica; ?></td>
 								<tr>
-        						<th>Foto: </th><td><?php echo $foto; ?></td>
+        						<th>Foto: </th><td><?php echo '<img style="width: 100px;" src="data:image/jpeg;base64,'.base64_encode($foto).'"/>'; ?></td>
 								<tr>
 								<th>Puntos de promoción: </th><td><?php echo $puntos_promocion; ?></td>
 								<tr>
@@ -85,7 +85,7 @@
 						</div>
 							<div class="col text-right">
 								<center>
-								<a href="registro_botellas.php?" class="btn btn-secondary content-link1">Atrás </a>
+								<a href="marca_botellas.php?" class="btn btn-secondary content-link1">Atrás </a>
 								</center>
 						    </div>
 					</div>

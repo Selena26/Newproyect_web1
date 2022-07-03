@@ -1,38 +1,23 @@
 <?php
 	session_start();
 	require 'conexion.php';
-
-
-    if(isset($_GET['edit']) && !empty(trim($_GET['edit']))){
-        //construir la consulta
-        $query='SELECT * FROM marca_botellas WHERE id=?';
-        //preparar la sentencia
-        if($stmt=$mysqli->prepare($query)){
-            $stmt->bind_param('i', $_GET['edit']);
-            //ejecuto la sentencia
-            if($stmt->execute()){
-                $result=$stmt->get_result();
-                if($result->num_rows==1){
-                    $row=$result->fetch_array
-                    (MYSQLI_ASSOC);
-                    $nombre_marca=$row['nombre_marca'];
-                    $representacion_fisica=$row['representacion_fisica'];
-                    $foto=$row['foto'];
-                    $puntos_promocion=$row['puntos_promocion'];
-                }else{
-                    echo 'Error! No existen los resultados';
-                    exit();
-                }
-            }else{
-                echo 'Error! Revise la conexión a la base de datos';
-                exit();
-            }
-        }
-        $stmt->close();
-    }else{
-        header("location: marca_botellas.php");
-        exit();
-    }
+	
+	if(!isset($_SESSION['id'])){
+		header("Location: index.php");
+	}
+	
+	$id = $_SESSION['id'];
+	$tipo_usuario = $_SESSION['tipo_usuario'];
+	
+	if($tipo_usuario == 1){
+		$where = "";
+		} else if($tipo_usuario == 2){
+		$where = "WHERE id=$id";
+	}
+	
+	$sql = "SELECT * FROM usuarios $where";
+	$resultado = $mysqli->query($sql);
+     
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -80,49 +65,45 @@
                         <!--<div class="card-body">-->
                         <div class="content-box">
                             <br>
-                            <?php
                             
-                                
-                            ?>
                             <!--aqui iba antes lo del php-->
-                            <form action="proceso_modificar.php?id=<?php echo $row['id'];?>" method="POST" enctype="multipart/form-data">
+                            <form action="proceso_guardar.php" method="POST" enctype="multipart/form-data">
                                 <div class="row">
                                     <div class="col">
                                         <div class="form-group">
                                             <label>Nombre de la marca</label>
                                             <input type="text" placeholder="Nombre" class="form-control"
-                                                name="nombre_marca" value="<?php echo $nombre_marca; ?>">
+                                                name="nombre_marca" value="">
                                         </div>
                                     </div>
                                     <div class="col">
                                         <div class="form-group">
                                             <label>Representación física (cm3)</label>
                                             <input type="number" class="form-control" placeholder="cm3"
-                                                name="representacion_fisica" value="<?php echo $representacion_fisica; ?>">
+                                                name="representacion_fisica" value="">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col">
                                         <div class="form-group">
-                                            <label>Foto</label><br>
-                                            <img style="width: 100px;" src="data:image/jpeg;base64, <?php echo base64_encode($foto);?>"/>
+                                            <label>Foto</label>
                                             <input type="file" class="form-control-file"
-                                                name="foto" value="<?php base64_encode($foto); ?>">
+                                                name="foto">
                                         </div>
                                     </div>
                                     <div class="col">
                                         <div class="form-group">
                                             <label>Puntos de promoción</label>
                                             <input type="number" class="form-control" placeholder="Número de puntos"
-                                                name="puntos_promocion" value="<?php echo $puntos_promocion; ?>">
+                                                name="puntos_promocion" value="">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <!---===== form start====-->
                                     <div class="form-group">
-                                    <input type="submit" value="Aceptar">
+                                        <input type="submit" value="Aceptar">
                                     </div>
                                     
                                     <div class="col text-right">
