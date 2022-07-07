@@ -65,8 +65,18 @@
 								$backId=$viewData['id']-1;
 								$fecha=$viewData['fecha'];
 								$control=$viewData['control'];
-								$usuarioDB=$viewData['usuario'];
-								$pto_acopioDB=$viewData['pto_acopio'];
+								
+								// Obtener nombre de Usuario
+								$sql2="SELECT id, nombre FROM usuarios WHERE id=" . $viewData['usuario'];
+								$res2= $mysqli->query($sql2);
+								$viewDataUser=$res2->fetch_assoc();
+								$usuarioDB = $viewDataUser['nombre'];
+
+								// Obtener nombre de punto de acopio
+								$sql2="SELECT id, nombre FROM punto_acopio WHERE id=" . $viewData['pto_acopio'];
+								$res2= $mysqli->query($sql2);
+								$viewDataPto=$res2->fetch_assoc();
+								$pto_acopioDB = $viewDataPto['nombre'];
                                 ?>
 								<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                 <tr>
