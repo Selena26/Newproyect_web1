@@ -25,3 +25,4 @@
 <script type="text/javascript" src="./js/script2.js"></script>
 <script type="text/javascript" src="./js/scriptbotellas.js"></script>
 <script type="text/javascript" src="./js/scriptmarca.js"></script>
+<script type="text/javascript" src="./js/scriptpromociones.js"></script>

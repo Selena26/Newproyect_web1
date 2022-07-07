@@ -60,7 +60,7 @@
 								<div class="table-responsive">
                                 <?php 
                                 $id= $_GET['view'];
-								$query="SELECT * FROM cont_registro WHERE id=$id";
+								$query="SELECT * FROM registro_botellas WHERE id=$id";
 								$res= $mysqli->query($query);
 								$viewData=$res->fetch_assoc();
 								$backId=$viewData['id']-1;

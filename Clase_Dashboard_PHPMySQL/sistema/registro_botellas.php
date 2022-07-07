@@ -5,7 +5,6 @@
 	if(!isset($_SESSION['id'])){
 		header("Location: index.php");
 	}
-	
 	$id = $_SESSION['id'];
 	$tipo_usuario = $_SESSION['tipo_usuario'];
 	
@@ -15,10 +14,8 @@
 		$where = "WHERE id=$id";
 	}
 	
-	$sql = "SELECT * FROM cont_registro $where";
+	$sql = "SELECT * FROM registro_botellas $where";
 	$resultado = $mysqli->query($sql);
-	
-	
 ?>
 
 <!DOCTYPE html>
@@ -94,7 +91,7 @@
 										<?php
                                         require_once('conexion.php'); 
                                         $db= $mysqli;
-                                        $sql1="SELECT * FROM cont_registro ORDER BY fecha DESC";
+                                        $sql1="SELECT * FROM registro_botellas ORDER BY fecha DESC";
                                         $res1= $mysqli->query($sql1);
                                         if($res1->num_rows>0)
                                         {$i=1;
@@ -127,7 +124,7 @@
 
 											<td><a href="ver_registrobotellas.php?view=<?php echo $data['id']; ?>" class="text-secondary content-link1"><i class='far fa-eye'></i></a></td>
                                             <td><a href="editar_registrobotella.php?edit=<?php echo $data['id']; ?>" class="text-success content-link1"><i onclick="cargar()" class=' far fa-edit'></i></a></td>
-											<td><a href="javascript:void(0)" class="text-danger delete" name="cont_registro" id="<?php echo $data['id']; ?>"><i class='far fa-trash-alt'></i></a></td>
+											<td><a href="javascript:void(0)" class="text-danger delete" name="registro_botellas" id="<?php echo $data['id']; ?>"><i class='far fa-trash-alt'></i></a></td>
                                         </tr>
                                         <?php
                                         $i++;}

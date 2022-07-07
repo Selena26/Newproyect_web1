@@ -64,6 +64,10 @@
                     <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                     Registro marca de botellas
                 </a>
+                <a class="nav-link" href="registro_promocion.php">
+                    <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                    Registro de promociones
+                </a>
                 </div>
         </div>
         <div class="sb-sidenav-footer">
