@@ -28,7 +28,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 		<meta name="description" content="" />
 		<meta name="author" content="" />
-		<title>Tables - SB Admin</title>
+        <link rel="icon" href="assets/img/newplast.jpg">
+		<title>Puntos de acopio</title>
 		<link href="css/styles.css" rel="stylesheet" />
 		<link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" crossorigin="anonymous"></script>
@@ -50,7 +51,11 @@
 							<li class="breadcrumb-item active">Ver Puntos de Acopio</li>
 						</ol>
 						<div class="card mb-4">
-							<div class="card-body">Información XXXXXXXXXXXX <a target="_blank" href="https://datatables.net/">official DataTables documentation</a>.</div>
+							<div class="card-body">En esta sección se encuentra información referente a los puntos de
+                                 acopio. Hay una tabla con contenido del nombre del punto de acopio, nombre del 
+                                 representante, email, telefono, latitud y longitud del lugar registrado. Así mismo, 
+                                 de forma detallada de puede visualizar el contenido a detalle, editar, añadir o 
+                                 eliminar un registro.</div>
 						</div>
 						<div class="card mb-4">
 							<div class="card-header"><i class="fas fa-table mr-1"></i>Registro</div>
