@@ -71,17 +71,17 @@
                                     <div class="card-header"><h3 class="text-center font-weight-light my-4">Login</h3></div>
                                     <div class="card-body">
                                         <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-                                            <div class="form-group"><label class="small mb-1" for="inputEmailAddress">Usuario</label><input class="form-control py-4" id="inputEmailAddress" name="usuario" type="text" placeholder="Enter email address" /></div>
-                                            <div class="form-group"><label class="small mb-1" for="inputPassword">Password</label><input class="form-control py-4" id="inputPassword" name="password" type="password" placeholder="Enter password" /></div>
+                                            <div class="form-group"><label class="small mb-1" for="inputEmailAddress">Usuario</label><input class="form-control py-4" id="inputEmailAddress" name="usuario" type="text" placeholder="Ingrese el usuario" /></div>
+                                            <div class="form-group"><label class="small mb-1" for="inputPassword">Password</label><input class="form-control py-4" id="inputPassword" name="password" type="password" placeholder="Ingrese la contraseña" /></div>
                                             <div class="form-group">
-                                                <div class="custom-control custom-checkbox"><input class="custom-control-input" id="rememberPasswordCheck" type="checkbox" /><label class="custom-control-label" for="rememberPasswordCheck">Remember password</label></div>
+                                                <div class="custom-control custom-checkbox"><input class="custom-control-input" id="rememberPasswordCheck" type="checkbox" /><label class="custom-control-label" for="rememberPasswordCheck">Recordar contraseña</label></div>
 											</div>
-                                            <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0"><a class="small" href="password.html">Forgot Password?</a>
-											<button type="submit" class="btn btn-primary bg-dark">Enter</button></div>
+                                            <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0"><a class="small" href="password.html">¿Has olvidado tu contraseña?</a>
+											<button type="submit" class="btn btn-primary bg-dark">Ingresar</button></div>
 										</form>
 									</div>
                                     <div class="card-footer text-center">
-                                        <div class="small"><a href="register.html">Need an account? Sign up!</a></div>
+                                        <div class="small"><a href="register.html">¿Necesito una cuenta? Inscribirse!</a></div>
 									</div>
 								</div>
 							</div>
