@@ -125,7 +125,7 @@
                                         <?php
                                         require_once('conexion.php'); 
                                         $db= $mysqli;
-                                        $sql1="SELECT * FROM cont_registro ORDER BY id DESC";
+                                        $sql1="SELECT * FROM registro_botellas ORDER BY id DESC";
                                         $res1= $mysqli->query($sql1);
                                         if($res1->num_rows>0)
                                         {$i=1;

@@ -20,7 +20,7 @@
 
     $query1=mysqli_query($mysqli,'SELECT id, Nombre FROM punto_acopio');
     $query3=mysqli_query($mysqli,'SELECT id, nombre FROM usuarios WHERE id <> 1');
-    $query2=mysqli_query($mysqli,'SELECT Nombre FROM punto_acopio p JOIN cont_registro c ON p.id = c.id');
+    $query2=mysqli_query($mysqli,'SELECT Nombre FROM punto_acopio p JOIN registro_botellas c ON p.id = c.id');
 	
 ?>
 <!DOCTYPE html>
@@ -68,7 +68,7 @@
                                     if(!empty($_GET['edit'])){
 
                                         $editId= $_GET['edit'];
-                                        $query="SELECT * FROM cont_registro WHERE id=$editId";
+                                        $query="SELECT * FROM registro_botellas WHERE id=$editId";
                                         $res= $mysqli->query($query);
                                         $editData=$res->fetch_assoc();
                                         $usuario=$editData['usuario'];
@@ -85,7 +85,7 @@
                                         $editId='';
                                         $idAttr="adminForm";
                                      }?>
-                            <form id="<?php echo $idAttr; ?>" rel="<?php echo $editId; ?>" name="cont_registro" >
+                            <form id="<?php echo $idAttr; ?>" rel="<?php echo $editId; ?>" name="registro_botellas" >
 	<div class="row">
     <div class="col">
 		<div class="form-group">
