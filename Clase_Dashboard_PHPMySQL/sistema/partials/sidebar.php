@@ -48,6 +48,10 @@
                     <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                     Tables
                 </a-->
+                <a class="nav-link" href="reportes.php">
+                    <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                    Reportes
+                </a>
                 <a class="nav-link" href="usuarios.php">
                     <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                     Usuarios

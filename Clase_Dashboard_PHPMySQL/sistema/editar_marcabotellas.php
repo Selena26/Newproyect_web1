@@ -108,7 +108,7 @@
                                         <div class="form-group">
                                             <label>Foto</label><br>
                                             <img style="width: 100px;" src="data:image/jpeg;base64, <?php echo base64_encode($foto);?>"/>
-                                            <input type="file" class="form-control-file"
+                                            <input type="file" REQUIRED class="form-control-file"
                                                 name="foto" value="<?php base64_encode($foto); ?>">
                                         </div>
                                     </div>
