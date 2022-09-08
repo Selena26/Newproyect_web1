@@ -83,8 +83,8 @@
                                          $pto_acopio= '';
                                          $fecha= '';
                                          $control= '';
-                                        $editId='';
-                                        $idAttr="adminForm";
+                                         $editId='';
+                                         $idAttr="adminForm";
                                      }?>
                             <form id="<?php echo $idAttr; ?>" rel="<?php echo $editId; ?>" name="registro_botellas" >
 	<div class="row">
@@ -140,14 +140,9 @@
 	      </div>
         </div>
 		<div class="row">
-		<div class="col">
-			<!---===== form start====-->
-          
-			<div class="form-group">
+            <div class="form-group">
 				<button type="submit" class="btn btn-secondary">Guardar</button>
 			</div>
-			<!---====== form end==========-->
-		</div>
         <div class="col text-right">
             <a href="registro_botellas.php?" class="btn btn-secondary content-link1">Atrás </a>
 		</div>

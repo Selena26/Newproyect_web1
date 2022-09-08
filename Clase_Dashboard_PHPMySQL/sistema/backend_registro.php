@@ -2,7 +2,7 @@
 require_once('conexion.php'); 
 $db= $mysqli;
 //insert
-if(empty($_GET['id']) && !empty($_GET['name']) && $_GET['name']=='cont_registro'){
+if(empty($_GET['id']) && !empty($_GET['name']) && $_GET['name']=='registro_botellas'){
   extract($_POST);
  if(!empty($usuario)){
   
@@ -29,7 +29,7 @@ if(empty($_GET['id']) && !empty($_GET['name']) && $_GET['name']=='cont_registro'
 }
 }
 // update 
-if(!empty($_GET['id']) && !empty($_GET['name']) && $_GET['name']=='cont_registro')
+if(!empty($_GET['id']) && !empty($_GET['name']) && $_GET['name']=='registro_botellas')
 {
 
  extract($_POST);
