@@ -47,7 +47,7 @@
 			<div id="layoutSidenav_content">
 				<main>
 					<div class="container-fluid">
-						<h1 class="mt-4">Registro de Botellas</h1>
+						<h1 class="mt-4">Registro de Promoción</h1>
 						<ol class="breadcrumb mb-4">
 							<li class="breadcrumb-item"><a href="principal.php">Dashboard</a></li>
 							<li class="breadcrumb-item active">Registro de Botellas</li>
