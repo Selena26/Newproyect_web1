@@ -12,6 +12,18 @@ a, li {
     color: #fff;
 }
 
+.login{
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+    font-size: 20px;
+    text-decoration: none;
+    background: rgba(46,49,48,255);
+    padding: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .1s ease all;
+}
+
 .logo-header img{
     width: 50px;
 }
