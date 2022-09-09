@@ -14,7 +14,7 @@
 		$where = "WHERE id=$id";
 	}
 	
-	$sql = "SELECT * FROM usuarios $where";
+	$sql = "SELECT * FROM registro_botellas $where";
 	$resultado = $mysqli->query($sql);
 ?>
 
@@ -27,7 +27,7 @@
 		<meta name="description" content="" />
 		<meta name="author" content="" />
 		<link rel="icon" href="assets/img/newplast.jpg">
-		<title>Registro de botellas</title>
+		<title>Reportes</title>
 		<link href="css/styles.css" rel="stylesheet" />
 		<link href="css/estilo1.css" rel="stylesheet" />
 		<link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
@@ -44,47 +44,33 @@
 			<div id="layoutSidenav_content">
 				<main>
 					<div class="container-fluid">
-						<h1 class="mt-4">Registro de Botellas</h1>
-						<ol class="breadcrumb mb-4">
-							<li class="breadcrumb-item"><a href="principal.php">Dashboard</a></li>
-							<li class="breadcrumb-item active">Registro de Botellas</li>
-						</ol>
+						
 						<div class="card mb-4">
-							<div class="card-body">En esta sección se encuentra información referente al registro de botellas. 
-								Hay una tabla con contenido del usuario, punto de acopio fecha, y control de estado de las botellas 
-								registradas. Así mismo, de forma detallada de puede visualizar el contenido a detalle, editar, añadir 
-								o eliminar un registro.</div>
-						</div>
-						<div class="card mb-4">
-							<div class="card-header"><i class="fas fa-table mr-1"></i>Registro</div>
-							<div class="col text-right">
-                                <a href="editar_registrobotella.php?" class="btn btn-secondary content-link1">Añadir Nuevo </a>
-                            </div>
+							<div class="card-header"><i class="fas fa-table mr-1"></i>Reporte de registro de botellas</div>
+							
 							<div class="card-body">
 								<div class="table-responsive">
 									<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 										<thead>
 											<tr>
 												<th>S.N</th>
+												<th>Nombre</th>
 												<th>Usuario</th>
 												<th>Punto Acopio</th>
 												<th>Fecha</th>
 												<th>Control</th>
-												<th>Ver</th>
-												<th>Editar</th>
-												<th>Eliminar</th>
+												
 											</tr>
 										</thead>
 										<tfoot>
 											<tr>
 												<th>S.N</th>
+												<th>Nombre</th>
 												<th>Usuario</th>
 												<th>Punto Acopio</th>
 												<th>Fecha</th>
 												<th>Control</th>
-												<th>Ver</th>
-												<th>Editar</th>
-												<th>Eliminar</th>
+												
 											</tr>
 										</tfoot>
 										<tbody>
@@ -106,6 +92,13 @@
 												echo $viewData['nombre'];
 												?>
 											</td>
+											<td><?php 
+												$sql2="SELECT id, usuario FROM usuarios WHERE id=" . $data['usuario'];
+												$res2= $mysqli->query($sql2);
+												$viewData=$res2->fetch_assoc();
+												echo $viewData['usuario'];
+												?>
+											</td>
                                             <td><?php
 												$sql2="SELECT id, nombre FROM punto_acopio WHERE id=" . $data['pto_acopio'];
 												$res2= $mysqli->query($sql2);
@@ -122,9 +115,7 @@
                                             <td><i class='fa fa-ban'></i></td>
                                             <?php } ?>
 
-											<td><a href="ver_registrobotellas.php?view=<?php echo $data['id']; ?>" class="text-secondary content-link1"><i class='far fa-eye'></i></a></td>
-                                            <td><a href="editar_registrobotella.php?edit=<?php echo $data['id']; ?>" class="text-success content-link1"><i onclick="cargar()" class=' far fa-edit'></i></a></td>
-											<td><a href="javascript:void(0)" class="text-danger delete" name="registro_botellas" id="<?php echo $data['id']; ?>"><i class='far fa-trash-alt'></i></a></td>
+											
                                         </tr>
                                         <?php
                                         $i++;}
@@ -136,7 +127,15 @@
                                         <?php } ?>
 										</tbody>
 									</table>
+
 								</div>
+                                    <div align="center">
+									<h5>Ver los Reportes en los siguientes formatos:</h5>
+									<a href="./excel.php" class="btn-small blue z-depth-2">
+										<img src="assets/img/sobresalir.png" width="50" height="50" margin="25" HSPACE="15"></a>
+                                    <a class="btn-small blue z-depth-3" href="reportes.php">
+									<img src="assets/img/expediente.png" width="50" height="50" margin="25" HSPACE="15"></a>
+									</div>
 								</div>
 								</div>
 											</div>
@@ -146,6 +145,5 @@
 				?>
 			</div>
 		</div>
-		
 	</body>
 </html>

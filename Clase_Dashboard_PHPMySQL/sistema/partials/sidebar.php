@@ -48,7 +48,7 @@
                     <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                     Tables
                 </a-->
-                <a class="nav-link" href="reportes.php">
+                <a class="nav-link" href="perfilRepor.php">
                     <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                     Reportes
                 </a>

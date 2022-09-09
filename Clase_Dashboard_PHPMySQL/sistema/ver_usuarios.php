@@ -78,7 +78,13 @@
                                         <th>Nombre del usuario -</th><td><?php echo $nombre; ?></td>
                                     </tr>
                                     <tr>
-                                        <th>Tipo de usuario -</th><td><?php echo $tipo_usuario; ?></td>
+                                        <th>Tipo de usuario -</th><td><?php 
+										if($tipo_usuario==1){
+											echo 'Administrador';
+										}else{
+											echo 'Usuario';
+										}
+									 ?></td>
                                     </tr>
 									</table>
 								</div>

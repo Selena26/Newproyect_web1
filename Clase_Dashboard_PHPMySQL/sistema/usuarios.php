@@ -102,7 +102,14 @@
 													<td><?php echo $i; ?></td>
 													<td><?php echo $data['usuario']; ?></td>
 													<td><?php echo $data['nombre']; ?></td>
-													<td><?php echo $data['tipo_usuario']; ?></td>
+													<td><?php 
+													if($data['tipo_usuario']==1){
+														echo 'Aministrador';
+													}else{
+														echo 'Usuario';
+													}
+													
+													 ?></td>
 													<td><a href="ver_usuarios.php?view=<?php echo $data['id']; ?>" class="text-secondary content-link1"><i class='far fa-eye'></i></a></td>
                                                     <td><a href="editar_usuario.php?edit=<?php echo $data['id']; ?>" class="text-success content-link1"><i onclick="cargar()" class=' far fa-edit'></i></a></td>
 													<td><a href="javascript:void(0)" class="text-danger delete" name="usuarios" id="<?php echo $data['id']; ?>"><i class='far fa-trash-alt'></i></a></td>

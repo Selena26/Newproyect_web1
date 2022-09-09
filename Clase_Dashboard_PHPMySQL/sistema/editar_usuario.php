@@ -111,8 +111,15 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label>Tipo de usuario</label>
-                                            <input type="number" class="form-control" placeholder="Número"
-                                                name="tipo_usuario" value="<?php echo $tipo_usuario; ?>">
+                                            <select class="form-control" name="tipo_usuario" type="number" required>
+                                            <?php
+				                            $selectedAdmin = ($tipo_usuario == 1) ? 'selected' : '';
+				                            $selectedCliente = ($tipo_usuario == 2) ? 'selected' : '';
+				                            ?>
+                                            <option value="" selected="selected">Seleccionar</option>
+                                            <option value=1 <?=$selectedAdmin ?>>Administrador</option>
+                                            <option value=2 <?=$selectedCliente ?>>Usuario</option>
+                                            </select>
                                         </div>
                                     </div>
                                 </div>
