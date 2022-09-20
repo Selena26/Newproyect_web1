@@ -9,7 +9,6 @@ VALUES ('$nombre_marca', '$representacion_fisica', '$foto' ,'$puntos_promocion')
 $result=$mysqli->query($query);
 
 if($result){
-    header("location: marca_botellas.php");
     echo "<span class='success'>Contenido guardado con éxito</span>";
 }else{
     echo "<span class='fail'>¡Error!.. revisa tu consulta</span>";
