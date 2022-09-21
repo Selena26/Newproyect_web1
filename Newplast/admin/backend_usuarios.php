@@ -18,7 +18,11 @@ if(empty($_GET['id']) && !empty($_GET['name']) && $_GET['name']=='usuarios'){
     if(!empty($data) && !empty($tableName)){
        $insertData=insert_data($data,$tableName);
        if($insertData){
-         echo "<span class='success'>Perfil de administrador guardado con éxito</span>";
+        echo '
+          <script type="text/javascript">
+              swal("Hecho!", "Datos de usuario actualizados", "success");
+          </script>
+         ';
        }else{
          echo "<span class='fail'>¡Error!.. revisa tu consulta</span>";
        }
@@ -52,7 +56,12 @@ if(!empty($_GET['id']) && !empty($_GET['name']) && $_GET['name']=='usuarios'){
          $updateData=update_data($data,$tableName, $id);
 
        if($updateData){
-         echo "<span class='success'>Perfil de administrador guardado con éxito</span>";
+         //echo "<span class='success'>Perfil de administrador guardado con éxito</span>";
+         echo '
+          <script type="text/javascript">
+              swal("Hecho!", "Datos de usuario actualizados", "success");
+          </script>
+         ';
        }else{
          echo "<span class='fail'>¡Error!.. revisa tu consulta</span>";
        }
