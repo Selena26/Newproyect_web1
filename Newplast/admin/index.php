@@ -28,22 +28,29 @@
 				
 				header("Location: principal.php");
 				
-			} else {
-			
-			echo "La contraseña no coincide";
-			
+			} else {	
+				echo "Contraseña incorrecta";
+				/*
+				echo '
+				<script type="text/javascript">
+				    swal("Error", "Contraseña incorrecta", "warning");
+				</script>
+			    ';		
+			    */
 			}
 			
 			
 			} else {
-			echo "NO existe usuario";
-		}
-		
-		
-		
-	}
-	
-	
+				echo "Usuario no encontrado";
+				/*
+				echo '
+				<script type="text/javascript">
+				    swal("Error", "Usuario no existente", "error");
+				</script>
+			    ';
+			    */
+		}	
+	}	
 	
 ?>
 
@@ -59,8 +66,14 @@
         <title>LOGIN</title>
         <link href="css/styles.css" rel="stylesheet" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" crossorigin="anonymous"></script>
+	
+	    <!-- Importar recursos de sweet alert -->
+	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.9/sweetalert2.min.css">
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.9/sweetalert2.min.js"></script>   
+	    <!-- ************************************ -->
 	</head>
     <body class="bg-primary">
+        <div id="alertBox"></div>
         <div id="layoutAuthentication">
             <div id="layoutAuthentication_content" class="bg-dark">
                 <main>
