@@ -46,8 +46,47 @@ $(document).on('click', '.adminRole', function(e){
      $('button[type="submit"]').removeAttr('disabled').text('Save');
     
     $('#alertBox').html(data).fadeIn();
-  
-  }});
+    const Toast = Swal.mixin({
+      toast: true,
+      position: 'bottom-end',
+      showConfirmButton: false,
+      timer: 3000,
+      timerProgressBar: true,
+      customClass: "important! pt-6",
+      didOpen: (toast) => {
+        toast.addEventListener('mouseenter', Swal.stopTimer)
+        toast.addEventListener('mouseleave', Swal.resumeTimer)
+      }
+    })
+    
+    Toast.fire({
+      showCloseButton: true,
+      icon: 'success',
+      title: 'Guardado Correctamente'
+    })
+  }, 
+
+    error: function(data){
+      const Toast = Swal.mixin({
+        toast: true,
+        position: 'bottom-end',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        customClass: "important! pt-6",
+        didOpen: (toast) => {
+          toast.addEventListener('mouseenter', Swal.stopTimer)
+          toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+      })
+      
+      Toast.fire({
+        showCloseButton: true,
+        icon: 'error',
+        title: 'Error al guardar'
+      })
+    }
+});
     
   });
   
