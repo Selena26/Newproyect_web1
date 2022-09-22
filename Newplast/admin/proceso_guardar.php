@@ -7,10 +7,4 @@ $puntos_promocion=$_POST['puntos_promocion'];
 $query="INSERT INTO marca_botellas(nombre_marca, representacion_fisica, foto, puntos_promocion) 
 VALUES ('$nombre_marca', '$representacion_fisica', '$foto' ,'$puntos_promocion')";
 $result=$mysqli->query($query);
-
-if($result){
-    echo "<span class='success'>Contenido guardado con éxito</span>";
-}else{
-    echo "<span class='fail'>¡Error!.. revisa tu consulta</span>";
-}
 ?>

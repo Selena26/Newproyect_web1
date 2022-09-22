@@ -85,12 +85,6 @@ if(!empty($_GET['deleteId']) && !empty($_GET['deleteData']))
   
    $deleteData=delete_data($tableName, $id);
  
-    if($deleteData){
-      echo "<span class='success'>".$tableName." data was deleted</span>";
-    }else{
-      echo  "<span class='fail'>Error...Check your query</span>";
-    }
-   
 }
 
 // MySQL Query for database operation 

@@ -115,6 +115,24 @@ $(document).on('click', '.adminRole', function(e){
      $('button[type="submit"]').removeAttr('disabled');
     
       $('#alertBox').html(data).fadeIn();
+      const Toast = Swal.mixin({
+        toast: true,
+        position: 'bottom-end',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        customClass: "important! pt-6",
+        didOpen: (toast) => {
+          toast.addEventListener('mouseenter', Swal.stopTimer)
+          toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+      })
+      
+      Toast.fire({
+        showCloseButton: true,
+        icon: 'success',
+        title: 'Registro actualizado'
+      })
    }
         
   });
@@ -123,14 +141,13 @@ $(document).on('click', '.adminRole', function(e){
   
   
   // ============= delete data from database============= //
-  $(document).on('click','.delete',function(e){
+  $(document).on('click','.delete_botella',function(e){
   var el=$(this);
   var id=$(this).attr('id');
   var name = $(this).attr('name');
   
   if ($('#confirmBox').css("display") == "none") {
    $('#confirmBox').fadeIn();
-   alert('HOLA' + name);
    $('#confirmBox').find('button').on('click', function(){
    
       if($(this).val()==1){
@@ -143,8 +160,13 @@ $(document).on('click', '.adminRole', function(e){
             success: function(data){ 
                
                 $("#showTable").html(data); 
-                $('#alertBox').html(data).fadeIn();
                 el.parents('tr').remove();
+                $('#alertBox').html(data).fadeIn();
+                Swal.fire(
+                  'Eliminado',
+                  'Registro eliminado',
+                  'success'
+                )
             }
         });
       }

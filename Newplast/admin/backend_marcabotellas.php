@@ -1,26 +1,6 @@
 <?php
 require_once('conexion.php'); 
 $db= $mysqli;
-//=========home content =================--//
-
-
- if(!empty($_GET['deleteId']) && !empty($_GET['deleteData']))
-{
-
-   $id= legal_input($_GET['deleteId']);
-   $deleteData=legal_input($_GET['deleteData']);
-   $tableName= $deleteData;
-  
-   $deleteData=delete_data($tableName, $id);
- 
-    if($deleteData){
-      echo "<span class='success'>".$tableName." data was deleted</span>";
-    }else{
-      echo  "<span class='fail'>Error...Check your query</span>";
-    }
-   
-}
-
 // ======= delete data from database ============//
 if(!empty($_GET['deleteId']) && !empty($_GET['deleteData']))
 {
@@ -30,13 +10,7 @@ if(!empty($_GET['deleteId']) && !empty($_GET['deleteData']))
    $tableName= $deleteData;
   
    $deleteData=delete_data($tableName, $id);
- 
-    if($deleteData){
-      echo "<span class='success'>".$tableName." data was deleted</span>";
-    }else{
-      echo  "<span class='fail'>Error...Check your query</span>";
-    }
-   
+
 }
 
 // MySQL Query for database operation 

@@ -32,6 +32,9 @@
 		<link href="css/estilo1.css" rel="stylesheet" />
 		<link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" crossorigin="anonymous"></script>
+
+		<link rel="stylesheet" href="assets/plugins/SweetAlert/dist/sweetalert2.min.css">
+    		<script src="assets/plugins/SweetAlert/dist/sweetalert2.min.js"></script>
 	</head>
 	<body class="sb-nav-fixed">
 		<?php
@@ -75,18 +78,7 @@
 												<th>Eliminar</th>
 											</tr>
 										</thead>
-										<tfoot>
-											<tr>
-												<th>S.N</th>
-												<th>Usuario</th>
-												<th>Punto Acopio</th>
-												<th>Fecha</th>
-												<th>Control</th>
-												<th>Ver</th>
-												<th>Editar</th>
-												<th>Eliminar</th>
-											</tr>
-										</tfoot>
+							
 										<tbody>
 										<?php
                                         require_once('conexion.php'); 
@@ -124,7 +116,7 @@
 
 											<td><a href="ver_registrobotellas.php?view=<?php echo $data['id']; ?>" class="text-secondary content-link1"><i class='far fa-eye'></i></a></td>
                                             <td><a href="editar_registrobotella.php?edit=<?php echo $data['id']; ?>" class="text-success content-link1"><i onclick="cargar()" class=' far fa-edit'></i></a></td>
-											<td><a href="javascript:void(0)" class="text-danger delete" name="registro_botellas" id="<?php echo $data['id']; ?>"><i class='far fa-trash-alt'></i></a></td>
+											<td><a href="javascript:void(0)" class="text-danger delete_botella" name="registro_botellas" id="<?php echo $data['id']; ?>"><i class='far fa-trash-alt'></i></a></td>
                                         </tr>
                                         <?php
                                         $i++;}

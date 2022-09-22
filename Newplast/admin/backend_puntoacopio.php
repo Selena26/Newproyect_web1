@@ -79,13 +79,7 @@ if(empty($_GET['id']) && !empty($_GET['name']) && $_GET['name']=='punto_acopio')
    $tableName= $deleteData;
   
    $deleteData=delete_data($tableName, $id);
- 
-    if($deleteData){
-      echo "<span class='success'>".$tableName." data was deleted</span>";
-    }else{
-      echo  "<span class='fail'>Error...Check your query</span>";
-    }
-   
+
 }
 
 // ======= delete data from database ============//
@@ -97,13 +91,7 @@ if(!empty($_GET['deleteId']) && !empty($_GET['deleteData']))
    $tableName= $deleteData;
   
    $deleteData=delete_data($tableName, $id);
- 
-    if($deleteData){
-      echo "<span class='success'>".$tableName." data was deleted</span>";
-    }else{
-      echo  "<span class='fail'>Error...Check your query</span>";
-    }
-   
+
 }
 
 // MySQL Query for database operation 

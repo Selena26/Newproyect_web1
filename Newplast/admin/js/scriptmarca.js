@@ -106,7 +106,6 @@ $(document).on('click','.delete',function(e){
 var el=$(this);
 var id=$(this).attr('id_marca');
 var name = $(this).attr('name');
-//alert('HOLA' + name);
 if ($('#confirmBox').css("display") == "none") {
  $('#confirmBox').fadeIn();
 
@@ -123,6 +122,11 @@ if ($('#confirmBox').css("display") == "none") {
              
               $("#showTable").html(data); 
               $('#alertBox').html(data).fadeIn();
+              Swal.fire(
+                'Eliminado',
+                'Registro eliminado',
+                'success'
+              )
               el.parents('tr').remove();
           }
       });

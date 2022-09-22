@@ -17,11 +17,6 @@ if(empty($_GET['id']) && !empty($_GET['name']) && $_GET['name']=='registro_botel
 
    if(!empty($data) && !empty($tableName)){
       $insertData=insert_data($data,$tableName);
-      if($insertData){
-        echo "<span class='success'>Contenido guardado con éxito</span>";
-      }else{
-        echo "<span class='fail'>¡Error!.. revisa tu consulta</span>";
-      }
    }
 
 }else{
@@ -31,7 +26,6 @@ if(empty($_GET['id']) && !empty($_GET['name']) && $_GET['name']=='registro_botel
 // update 
 if(!empty($_GET['id']) && !empty($_GET['name']) && $_GET['name']=='registro_botellas')
 {
-
  extract($_POST);
   
   if(!empty($usuario)){
@@ -43,20 +37,10 @@ if(!empty($_GET['id']) && !empty($_GET['name']) && $_GET['name']=='registro_bote
       'control'=>$control
       
     ];
- 
-
    $tableName=$_GET['name']; 
    $id= $_GET['id'];
  
  $updateData=update_data($data,$tableName, $id);
-  if($updateData){
-   echo "<span class='success'>Se actualizó correctamente el contenido</span>";
-  }else{
-   echo "<span class='fail'>¡Error!.. revisa tu consulta</span>";
-  }
-
- }else{
-  echo "<span class='fail'>El campo Resgistro de botellas está vacío</span>";
  }
 }
 
@@ -69,12 +53,6 @@ if(!empty($_GET['deleteId']) && !empty($_GET['deleteData']))
    $tableName= $deleteData;
   
    $deleteData=delete_data($tableName, $id);
- 
-    if($deleteData){
-      echo "<span class='success'>".$tableName." data was deleted</span>";
-    }else{
-      echo  "<span class='fail'>Error...Check your query</span>";
-    }
    
 }
 
