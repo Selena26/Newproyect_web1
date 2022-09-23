@@ -7,4 +7,9 @@ $puntos_promocion=$_POST['puntos_promocion'];
 $query="INSERT INTO marca_botellas(nombre_marca, representacion_fisica, foto, puntos_promocion) 
 VALUES ('$nombre_marca', '$representacion_fisica', '$foto' ,'$puntos_promocion')";
 $result=$mysqli->query($query);
+
+if($result){
+     header("location: marca_botellas.php");
+ }
+
 ?>

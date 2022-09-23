@@ -46,7 +46,7 @@ $(document).on('submit','#adminForm',function(e){
    $('button[type="submit"]').removeAttr('disabled').text('Save');
   
   $('#alertBox').html(data).fadeIn();
-
+  
 }});
   
 });

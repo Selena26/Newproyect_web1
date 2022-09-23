@@ -88,7 +88,7 @@
                                          $editId='';
                                          $idAttr="adminForm";
                                      }?>
-                            <form id="<?php echo $idAttr; ?>" rel="<?php echo $editId; ?>" name="registro_botellas" >
+      <form id="<?php echo $idAttr; ?>" rel="<?php echo $editId; ?>" name="registro_botellas" >
 	<div class="row">
     <div class="col">
 		<div class="form-group">

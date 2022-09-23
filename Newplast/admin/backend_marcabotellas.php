@@ -11,6 +11,13 @@ if(!empty($_GET['deleteId']) && !empty($_GET['deleteData']))
   
    $deleteData=delete_data($tableName, $id);
 
+   if($deleteData){
+         echo '
+          <script type="text/javascript">
+              swal("Hecho!", "Registro eliminado", "success");
+          </script>
+         ';
+       }
 }
 
 // MySQL Query for database operation 
