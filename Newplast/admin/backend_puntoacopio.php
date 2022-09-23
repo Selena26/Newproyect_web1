@@ -68,9 +68,17 @@ if(empty($_GET['id']) && !empty($_GET['name']) && $_GET['name']=='punto_acopio')
    
    $updateData=update_data($data,$tableName, $id);
     if($updateData){
-     echo "<span class='success'>Se actualizó correctamente el contenido</span>";
+      echo '
+      <script type="text/javascript">
+          swal.fire("Hecho!", "Punto de acopio actualizado", "success");
+      </script>
+     ';
     }else{
-     echo "<span class='fail'>¡Error!.. revisa tu consulta</span>";
+      echo '
+      <script type="text/javascript">
+          swal.fire("Error!", "No se pudo actualizar el punto de acopio", "error");
+      </script>
+     ';
     }
  
    }else{
