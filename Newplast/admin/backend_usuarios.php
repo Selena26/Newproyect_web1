@@ -20,7 +20,7 @@ if(empty($_GET['id']) && !empty($_GET['name']) && $_GET['name']=='usuarios'){
        if($insertData){
         echo '
           <script type="text/javascript">
-              swal("Hecho!", "Datos de usuario actualizados", "success");
+              swal("Hecho!", "Datos de usuario registrados", "success");
           </script>
          ';
        }else{
