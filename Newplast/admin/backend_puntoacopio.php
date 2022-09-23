@@ -24,9 +24,17 @@ if(empty($_GET['id']) && !empty($_GET['name']) && $_GET['name']=='punto_acopio')
      if(!empty($data) && !empty($tableName)){
         $insertData=insert_data($data,$tableName);
         if($insertData){
-          echo "<span class='success'>Contenido guardado con éxito</span>";
+          echo '
+          <script type="text/javascript">
+              swal.fire("Hecho!", "Nuevo punto de acopio registrado", "success");
+          </script>
+         ';
         }else{
-          echo "<span class='fail'>¡Error!.. revisa tu consulta</span>";
+          echo '
+          <script type="text/javascript">
+              swal.fire("Error!", "Error al crear nuevo punto de acopio", "error");
+          </script>
+         ';
         }
      }
  
