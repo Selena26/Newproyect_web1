@@ -40,8 +40,4 @@
         </li>
     </ul>
 </nav>
-<div id="confirmBox">
-    <p>¿Estás seguro de eliminar? ?</p>
-    <button value="1">Sí</button><button value="0">No</button>
-</div>
 <div id="alertBox">mhvmbvbm</div>
