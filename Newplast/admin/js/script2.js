@@ -90,7 +90,6 @@ var el=$(this);
 var id=$(this).attr('id');
 var name = $(this).attr('name');
 
-//alert('HOLA' + name);
 Swal.fire({
   title: '¿Realmente quieres eliminar el punto de acopio?',
   text: "¡El registro sera eliminado permanentemente!",

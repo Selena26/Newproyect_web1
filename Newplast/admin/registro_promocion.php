@@ -117,7 +117,7 @@
                                                         <td><?php echo $data['puntos_recolectar']; ?></td>
 													    <td><a href="ver_registro_promocion.php?view=<?php echo $data['id']; ?>" class="text-secondary content-link1"><i class='far fa-eye'></i></a></td>
                                                         <td><a href="editar_registro_promocion.php?edit=<?php echo $data['id']; ?>" class="text-success content-link1"><i onclick="cargar()" class=' far fa-edit'></i></a></td>
-													    <td><a href="javascript:void(0)" class="text-danger delete" name="registro_promocion" id="<?php echo $data['id']; ?>"><i class='far fa-trash-alt'></i></a></td>
+													    <td><a href="javascript:void(0)" class="text-danger prom" name="registro_promocion" id="<?php echo $data['id']; ?>"><i class='far fa-trash-alt'></i></a></td>
 												    </tr>
 											    <?php 
 											    $i++;}

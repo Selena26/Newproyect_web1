@@ -43,10 +43,13 @@ $(document).on('click', '.adminRole', function(e){
      $('#adminForm').find('input').val('')
      $('#adminForm').find('textarea').val('');
      $('button[type="submit"]').removeAttr('disabled').text('Save');
-    
-    $('#alertBox').html(data).fadeIn();
-  
-  }});
+     $('#alertBox').html(data).fadeIn();
+     swal.fire("Hecho!", "Promoción registrada correctamente", "success");
+  },
+    error: function(data){
+      swal.fire("Error!", "No se pudo registrar la promoción", "error");
+    }
+  });
     
   });
   
@@ -75,7 +78,11 @@ $(document).on('click', '.adminRole', function(e){
      $('button[type="submit"]').removeAttr('disabled');
     
       $('#alertBox').html(data).fadeIn();
-   }
+      swal.fire("Hecho!", "Promoción Actualizada correctamente", "success");
+   },
+   error: function(data){
+    swal.fire("Error!", "No se pudo actualizar la promoción", "error");
+  }
         
   });
    });
@@ -83,37 +90,54 @@ $(document).on('click', '.adminRole', function(e){
   
   
   // ============= delete data from database============= //
-  $(document).on('click','.delete',function(e){
+  $(document).on('click','.prom',function(e){
+    e.preventDefault();
   var el=$(this);
   var id=$(this).attr('id');
   var name = $(this).attr('name');
   
-  if ($('#confirmBox').css("display") == "none") {
-   $('#confirmBox').fadeIn();
-   alert('HOLA' + name);
-   $('#confirmBox').find('button').on('click', function(){
+  Swal.fire({
+    title: '¿Realmente quieres borrar esta promoción?',
+    text: "¡La promoción se eliminará permanentemente!",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Si',
+    cancelButtonText: 'No'
+  }).then((result) => {
+    if (result.value) {
+      $.ajax({    
+        type: "GET",
+        url: "./backend_registropromocion.php", 
+        data:{deleteId:id, deleteData:name},            
+        dataType: "html",                  
+        success: function(data){ 
+           
+            $("#showTable").html(data); 
+            $('#alertBox').html(data).fadeIn();
+            el.parents('tr').remove();
+        }
+    });
+      Swal.fire(
+        'Eliminado!',
+        'La promoción ha sido eliminada correctamente.',
+        'success'
+      )
+    }
+  })
+
+
+
    
-      if($(this).val()==1){
+    
   
-         $.ajax({    
-            type: "GET",
-            url: "./backend_registropromocion.php", 
-            data:{deleteId:id, deleteData:name},            
-            dataType: "html",                  
-            success: function(data){ 
-               
-                $("#showTable").html(data); 
-                $('#alertBox').html(data).fadeIn();
-                el.parents('tr').remove();
-            }
-        });
-      }
+
       
-     $('#confirmBox').fadeOut(); 
+
+
   
-   })
   
-  }
   
   });
   
