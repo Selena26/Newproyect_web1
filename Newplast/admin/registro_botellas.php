@@ -36,7 +36,7 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" crossorigin="anonymous"></script>
 
 		<link rel="stylesheet" href="assets/plugins/SweetAlert/dist/sweetalert2.min.css">
-    		<script src="assets/plugins/SweetAlert/dist/sweetalert2.min.js"></script>
+    	<script src="assets/plugins/SweetAlert/dist/sweetalert2.min.js"></script>
 	</head>
 	<body class="sb-nav-fixed">
 		<?php
@@ -118,7 +118,7 @@
 
 											<td><a href="ver_registrobotellas.php?view=<?php echo $data['id']; ?>" class="text-secondary content-link1"><i class='far fa-eye'></i></a></td>
                                             <td><a href="editar_registrobotella.php?edit=<?php echo $data['id']; ?>" class="text-success content-link1"><i onclick="cargar()" class=' far fa-edit'></i></a></td>
-											<td><a href="javascript:void(0)" class="text-danger delete_botella" name="registro_botellas" id="<?php echo $data['id']; ?>"><i class='far fa-trash-alt'></i></a></td>
+											<td><a href="javascript:void(0)" class="text-danger botella" name="registro_botellas" id="<?php echo $data['id']; ?>"><i class='far fa-trash-alt'></i></a></td>
                                         </tr>
                                         <?php
                                         $i++;}

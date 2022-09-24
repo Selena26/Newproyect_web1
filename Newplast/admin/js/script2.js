@@ -84,7 +84,7 @@ $(document).on('submit','#updateForm',function(e){
 
 
 // ============= delete data from database============= //
-$(document).on('click','.delete_botella',function(e){
+$(document).on('click','.delete_acopio',function(e){
   e.preventDefault();
 var el=$(this);
 var id=$(this).attr('id');

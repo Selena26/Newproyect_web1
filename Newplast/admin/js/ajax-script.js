@@ -85,38 +85,41 @@ $(document).on('submit','#updateForm',function(e){
 
 
 // ============= delete data from database============= //
-$(document).on('click','.delete',function(e){
+$(document).on('click','.delete_usuarios',function(e){
+   e.preventDefault();
   var el=$(this);
   var id=$(this).attr('id');
   var name = $(this).attr('name');
-  //alert('HOLA' + name);
-  if ($('#confirmBox').css("display") == "none") {
-   $('#confirmBox').fadeIn();
-
-   $('#confirmBox').find('button').on('click', function(){
-   
-      if($(this).val()==1){
-
-         $.ajax({    
-            type: "GET",
-            url: "./backend_usuarios.php", 
-            data:{deleteId:id, deleteData:name},            
-            dataType: "html",                  
-            success: function(data){ 
-               
-                $("#showTable").html(data); 
-                $('#alertBox').html(data).fadeIn();
-                el.parents('tr').remove();
-            }
-        });
-      }
-      
-     $('#confirmBox').fadeOut(); 
-
-   })
-
-  }
-
+  Swal.fire({
+   title: '¿Realmente quieres borrar este usuario?',
+   text: "¡El usuario sera eliminado permanentemente!",
+   icon: 'warning',
+   showCancelButton: true,
+   confirmButtonColor: '#3085d6',
+   cancelButtonColor: '#d33',
+   confirmButtonText: 'Si',
+   cancelButtonText: 'No'
+ }).then((result) => {
+   if (result.value) {
+      $.ajax({    
+         type: "GET",
+         url: "./backend_usuarios.php", 
+         data:{deleteId:id, deleteData:name},            
+         dataType: "html",                  
+         success: function(data){ 
+            
+             $("#showTable").html(data); 
+             $('#alertBox').html(data).fadeIn();
+             el.parents('tr').remove();
+         }
+     });
+     Swal.fire(
+       'Eliminado!',
+       'El usuario ha sido eliminado correctamente.',
+       'success'
+     )
+   }
+ })
 });
 
 

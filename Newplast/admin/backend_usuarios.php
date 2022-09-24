@@ -24,7 +24,11 @@ if(empty($_GET['id']) && !empty($_GET['name']) && $_GET['name']=='usuarios'){
           </script>
          ';
        }else{
-         echo "<span class='fail'>¡Error!.. revisa tu consulta</span>";
+        echo '
+          <script type="text/javascript">
+              swal("Error!", "No se pudo registrar al usuario", "error");
+          </script>
+         ';
        }
     }
   
@@ -63,7 +67,11 @@ if(!empty($_GET['id']) && !empty($_GET['name']) && $_GET['name']=='usuarios'){
           </script>
          ';
        }else{
-         echo "<span class='fail'>¡Error!.. revisa tu consulta</span>";
+          echo '
+          <script type="text/javascript">
+              swal("Error!", "No se pudo actualizar los datos del usuario", "error");
+          </script>
+        ';
        }
     }
 
@@ -138,6 +146,7 @@ $query="DELETE FROM ".$tableName." WHERE id=$id AND footer_menu=1";
 }
 
 $result= $db->query($query);
+
 if($result){
   return true;
 }else{
